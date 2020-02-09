@@ -68,9 +68,18 @@ module.exports = {
             },
           },
           {
+            resolve: `gatsby-remark-code-titles`,
+          },
+          {
             resolve: `gatsby-remark-external-links`,
             options: {
               target: '_blank',
+            },
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: 'language-',
             },
           },
         ],

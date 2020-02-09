@@ -10,3 +10,8 @@ hideAnchor: true
 [Next Blog](/blog/second-blog)
 
 [Github](https://github.com/Atsuyoshi-N)
+
+````cpp:title=example.cpp
+#include <iostream>
+using namespace std;
+````
