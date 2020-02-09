@@ -35,6 +35,7 @@ const IndexPage = () => {
             size="large"
             icon="github"
             href="https://github.com/Atsuyoshi-N"
+            target="_blank"
           >
             Github
           </Button>
