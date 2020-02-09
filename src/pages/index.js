@@ -19,16 +19,15 @@ const IndexPage = () => {
           >
             @Atsuyoshi-N portfolio
           </p>
-          <h2>Boilerplate for markdown-based website</h2>
           <br />
-          <Link to="/docs/get-started/introduction">
+          <Link to="/blog">
             <Button
               type="primary"
               size="large"
               icon="right-circle"
               style={{ marginRight: 10 }}
             >
-              Get Started
+              Blog
             </Button>
           </Link>
           <Button
