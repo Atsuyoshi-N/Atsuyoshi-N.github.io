@@ -53,7 +53,7 @@ class Header extends Component {
           >
             <h1 style={{ margin: 0, fontSize: '1.25rem' }}>
               <Link
-                to="/"
+                to="/blog"
                 style={{
                   color: 'white',
                   textDecoration: 'none',
