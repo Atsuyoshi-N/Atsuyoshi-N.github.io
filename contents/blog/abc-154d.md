@@ -1,5 +1,5 @@
 ---
-date: 2019-02-14
+date: 2020-02-10
 title: ABC154D-Dice in Line
 rootPage: /blog
 sidebar: Blog
