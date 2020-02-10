@@ -8,7 +8,7 @@ hideAnchor: true
 tags: ['AtCoder', 'ABC', 'ABC154', '累積和']
 ---
 
-[AtCoder](/tags/at-coder) / [ABC](/tags/abc) / [ABC154](/tags/abc154) / [累積和](/tags/累積和)
+[AtCoder](/tags/at-coder) / [ABC](/tags/abc) / [ABC154](/tags/abc-154) / [累積和](/tags/累積和)
 
 ## 問題概要
 
