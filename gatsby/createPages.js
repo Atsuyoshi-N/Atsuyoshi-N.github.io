@@ -1,11 +1,12 @@
-
 const replacePath = require('./utils')
-const path = require("path")
+const path = require('path')
+const _ = require('lodash')
 
 module.exports = exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
   const postTemplate = path.resolve(`src/templates/postTemplate.js`)
+  const tagTemplate = path.resolve(`src/templates/tags.js`)
 
   return graphql(`
     {
@@ -18,7 +19,15 @@ module.exports = exports.createPages = ({ actions, graphql }) => {
             fields {
               slug
             }
+            frontmatter {
+              tags
+            }
           }
+        }
+      }
+      tagsGroup: allMarkdownRemark(limit: 2000) {
+        group(field: frontmatter___tags) {
+          fieldValue
         }
       }
     }
@@ -32,6 +41,17 @@ module.exports = exports.createPages = ({ actions, graphql }) => {
         path: replacePath(node.fields.slug),
         component: postTemplate,
         context: {}, // additional data can be passed via context
+      })
+    })
+
+    const tags = result.data.tagsGroup.group
+    tags.forEach(tag => {
+      createPage({
+        path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+        component: tagTemplate,
+        context: {
+          tag: tag.fieldValue,
+        },
       })
     })
   })
