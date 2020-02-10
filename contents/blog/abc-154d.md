@@ -1,11 +1,14 @@
 ---
-date: 2019-02-14
+date: 2020-02-10
 title: ABC154D-Dice in Line
 rootPage: /blog
 sidebar: Blog
 showTitle: true
 hideAnchor: true
+tags: ['AtCoder', 'ABC', 'ABC154', '累積和']
 ---
+
+[AtCoder](/tags/at-coder) / [ABC](/tags/abc) / [ABC154](/tags/abc154) / [累積和](/tags/累積和)
 
 ## 問題概要
 

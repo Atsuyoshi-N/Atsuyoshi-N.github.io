@@ -2,18 +2,12 @@
   {
     "entry": "Docs",
     "name": "Docs",
-    "child_entries": [
-      "Get Started",
-      "Guide"
-    ]
+    "child_entries": ["Get Started", "Guide"]
   },
   {
     "entry": "Get Started",
     "name": "Get Started",
-    "items": [
-      "docs/get-started/introduction",
-      "docs/get-started/quick-start"
-    ]
+    "items": ["docs/get-started/introduction", "docs/get-started/quick-start"]
   },
   {
     "entry": "Guide",
@@ -28,9 +22,6 @@
   {
     "entry": "Blog",
     "name": "Blog",
-    "items": [
-      "blog/first-blog",
-      "blog/second-blog"
-    ]
+    "items": ["blog/first-blog", "blog/abc-154d"]
   }
 ]
