@@ -1,7 +1,8 @@
 #!/bin/bash
 
-if [ $1 = '' ]; then
+if [[ $1 = "" ]]; then
   echo "ファイル名を入力してください"
+  exit 1
 fi
 
 DATE=$(date "+%Y-%m-%d")
