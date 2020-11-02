@@ -19,6 +19,7 @@ const useStyles = makeStyles(theme => ({
   paper: {
     padding: '6px 16px',
     textAlign: 'center',
+    minWidth: '150px',
   },
   description: {
     textAlign: 'left',
@@ -31,11 +32,13 @@ export default function ExperienceTimeLineItem(props) {
 
   return experiences.map(experience => (
     <TimelineItem key={experience.id}>
-      <TimelineOppositeContent>
-        <Typography variant="body2" color="textSecondary">
-          {experience.term}
-        </Typography>
-      </TimelineOppositeContent>
+      {!props.isNarrow && (
+        <TimelineOppositeContent>
+          <Typography variant="body2" color="textSecondary">
+            {experience.term}
+          </Typography>
+        </TimelineOppositeContent>
+      )}
       <TimelineSeparator>
         <TimelineDot>{experience.icon}</TimelineDot>
         <TimelineConnector />
@@ -44,13 +47,11 @@ export default function ExperienceTimeLineItem(props) {
         <Paper elevation={3} className={classes.paper}>
           <Typography variant="h6" component="h1">
             {experience.company}
-            <br />
-            {experience.role}
           </Typography>
-          <br />
-          <Typography className={classes.description}>
-            {experience.description}
+          <Typography variant="h6" component="h1">
+            {experience.roll}
           </Typography>
+          <Typography>{experience.description}</Typography>
         </Paper>
       </TimelineContent>
     </TimelineItem>
