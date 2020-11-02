@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout'
+import Experience from '../components/Experience'
 import Button from 'antd/lib/button'
 import 'antd/lib/button/style/css'
 import { Link } from 'gatsby'
@@ -40,6 +41,8 @@ const IndexPage = () => {
             Github
           </Button>
         </div>
+        <br />
+        <Experience />
       </div>
     </Layout>
   )
