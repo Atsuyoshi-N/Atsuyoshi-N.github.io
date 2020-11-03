@@ -32,7 +32,7 @@ export default function ExperienceTimeLineItem(props) {
 
   return experiences.map(experience => (
     <TimelineItem key={experience.id}>
-      {!props.isNarrow && (
+      {props.isNarrow === 'false' && (
         <TimelineOppositeContent>
           <Typography variant="body2" color="textSecondary">
             {experience.term}
@@ -51,6 +51,11 @@ export default function ExperienceTimeLineItem(props) {
           <Typography variant="h6" component="h1">
             {experience.roll}
           </Typography>
+          {props.isNarrow === 'true' && (
+            <Typography variant="body2" color="textSecondary">
+              {experience.term}
+            </Typography>
+          )}
           <Typography>{experience.description}</Typography>
         </Paper>
       </TimelineContent>
