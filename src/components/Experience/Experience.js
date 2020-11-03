@@ -1,12 +1,21 @@
 import React from 'react'
 import ExperienceTimeLineItem from '../ExperienceTimeLineItem/ExperienceTimeLineItem'
 import Fade from 'react-reveal/Fade'
+import { Typography } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
 import Timeline from '@material-ui/lab/Timeline'
 import FastfoodIcon from '@material-ui/icons/Fastfood'
 import HotelIcon from '@material-ui/icons/Hotel'
 import CreateIcon from '@material-ui/icons/Create'
 import ChatIcon from '@material-ui/icons/Chat'
 import DataUsage from '@material-ui/icons/DataUsage'
+
+const useStyles = makeStyles({
+  title: {
+    margin: '0 20% 5%',
+    borderBottom: '1px solid cornflowerblue',
+  },
+})
 
 const experiences = [
   {
@@ -65,8 +74,17 @@ const experiences = [
 ]
 
 export default function Experience() {
+  const classes = useStyles()
   return (
     <Fade bottom>
+      <Typography
+        align="center"
+        className={classes.title}
+        color="textSecondary"
+        variant="h3"
+      >
+        Experience
+      </Typography>
       {window.matchMedia('(max-width: 767px)').matches ? (
         <Timeline align="left">
           <ExperienceTimeLineItem experiences={experiences} isNarrow="true" />
