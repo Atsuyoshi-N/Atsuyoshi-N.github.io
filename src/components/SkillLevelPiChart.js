@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { PieChart, Pie, ResponsiveContainer, Sector, Cell } from 'recharts'
 
 const renderActiveShape = props => {
@@ -40,60 +40,41 @@ const renderActiveShape = props => {
         endAngle={endAngle}
         fill={fill}
       />
-      <Sector
-        cx={cx}
-        cy={cy}
-        startAngle={startAngle}
-        endAngle={endAngle}
-        innerRadius={outerRadius + 6}
-        outerRadius={outerRadius + 10}
-        fill={fill}
-      />
-      <path
-        d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`}
-        stroke={fill}
-        fill="none"
-      />
-      <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
-      <text
-        x={ex + (cos >= 0 ? 1 : -1) * 12}
-        y={ey}
-        textAnchor={textAnchor}
-        fill="#333"
-      >{`PV ${value}`}</text>
-      <text
-        x={ex + (cos >= 0 ? 1 : -1) * 12}
-        y={ey}
-        dy={18}
-        textAnchor={textAnchor}
-        fill="#999"
-      >
-        {`(Rate ${(percent * 100).toFixed(2)}%)`}
-      </text>
+      <text x={cx} y={cy} dx={-13} dy={25}>{`${Math.floor(
+        percent * 100
+      )}%`}</text>
     </g>
   )
 }
 
 export default function SkillLevelPiChart(props) {
+  const [activeIndex, setActiveIndex] = useState(0)
   const { skillSet } = props
   const skillSetData = [
-    { value: 100 - skillSet.level, color: '#58616a', name: 'Non-Skilled' },
-    { value: skillSet.level, color: 'cornflowerblue', name: 'Skilled' },
+    { value: skillSet.level, color: 'cornflowerblue', name: 'Skill' },
+    { value: 100 - skillSet.level, color: '#58616a', name: 'Non-Skill' },
   ]
   return (
     <ResponsiveContainer width="100%" height={300}>
       <PieChart width={800} height={400}>
         <Pie
           data={skillSetData}
+          activeIndex={activeIndex}
           activeShape={renderActiveShape}
           cx={'50%'}
           cy={'50%'}
           dataKey="value"
           startAngle={90}
-          endAngle={450}
+          endAngle={-270}
           innerRadius={60}
           outerRadius={80}
           fill="#8884d8"
+          onMouseEnter={(data, index) => {
+            setActiveIndex(index)
+          }}
+          onMouseLeave={() => {
+            setActiveIndex(0)
+          }}
         >
           {skillSetData.map(e => (
             <Cell key={e.name} fill={e.color} />

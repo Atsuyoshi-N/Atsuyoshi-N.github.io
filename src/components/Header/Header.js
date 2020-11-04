@@ -45,45 +45,6 @@ class Header extends Component {
               </Link>
             </h1>
           </div>
-          <div
-            style={{
-              float: 'right',
-              marginBottom: '10px',
-            }}
-          >
-            <h1 style={{ margin: 0, fontSize: '1.25rem' }}>
-              <Link
-                to="/tags"
-                style={{
-                  color: 'white',
-                  textDecoration: 'none',
-                }}
-              >
-                Tags
-              </Link>
-            </h1>
-          </div>
-          <div
-            style={{
-              float: 'right',
-              padding: '0 10px',
-              marginBottom: '10px',
-            }}
-          >
-            <h1 style={{ margin: 0, fontSize: '1.25rem' }}>
-              <Link
-                to="/blog"
-                style={{
-                  color: 'white',
-                  textDecoration: 'none',
-                }}
-              >
-                Blog
-              </Link>
-            </h1>
-          </div>
-
-          {/* <Menu sidebarDocked={sidebarDocked}/> */}
         </div>
       </div>
     )
