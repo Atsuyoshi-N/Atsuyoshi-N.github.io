@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Atsuyoshi-N note',
+    title: 'a244_note',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

@@ -1,4 +1,5 @@
 import React from 'react'
+import ContentTitle from './ContentTitle'
 import { Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import Table from '@material-ui/core/Table'
@@ -10,10 +11,6 @@ import Paper from '@material-ui/core/Paper'
 import { Link } from 'gatsby'
 
 const useStyles = makeStyles({
-  title: {
-    margin: '0 20%',
-    borderBottom: '1px solid cornflowerblue',
-  },
   table: {
     minWidth: 300,
     borderCollapse: 'separate',
@@ -26,10 +23,10 @@ function createData(name, title, url) {
 }
 
 const rows = [
-  createData('University', '横浜国立大学理工学部数物電情情報系学科', ''),
+  createData('所属', '横浜国立大学理工学部数物電情情報系学科', ''),
   createData('GitHub', 'Atsuyoshi-N', 'https://github.com/Atsuyoshi-N'),
   createData('Twitter', '@a244_n', 'https://twitter.com/a244_n'),
-  createData('ブログ', 'Atsuyoshi-N note', '/blog'),
+  createData('ブログ', 'a244_note/blog', '/blog'),
   createData(
     'はてなブログ',
     "acchan's blog",
@@ -41,14 +38,7 @@ export default function SelfIntroduction() {
   const classes = useStyles()
   return (
     <>
-      <Typography
-        align="center"
-        className={classes.title}
-        color="textSecondary"
-        variant="h3"
-      >
-        Profile
-      </Typography>
+      <ContentTitle title="Profile" />
       <Table className={classes.table} aria-label="simple table">
         <TableBody>
           {rows.map(row => (

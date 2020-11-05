@@ -1,15 +1,7 @@
 import React from 'react'
-import { Typography } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles'
+import ContentTitle from './ContentTitle'
 import Grid from '@material-ui/core/Grid'
 import SkillSetCard from './SkillSetCard'
-
-const useStyles = makeStyles({
-  title: {
-    margin: '0 20% 5%',
-    borderBottom: '1px solid cornflowerblue',
-  },
-})
 
 const skillSets = [
   {
@@ -71,17 +63,9 @@ const skillSets = [
 ]
 
 export default function Skill() {
-  const classes = useStyles()
   return (
     <>
-      <Typography
-        align="center"
-        className={classes.title}
-        color="textSecondary"
-        variant="h3"
-      >
-        Skills
-      </Typography>
+      <ContentTitle title="Skills" />
       <Grid container>
         {skillSets.map(skillSet => (
           <SkillSetCard skillSet={skillSet} key={skillSet.technorogy} />

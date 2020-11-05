@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function ExperienceTimeLineItem(props) {
   const classes = useStyles()
-  const experiences = props.experiences.reverse()
+  const { experiences } = props
 
   return experiences.map(experience => (
     <TimelineItem key={experience.id}>

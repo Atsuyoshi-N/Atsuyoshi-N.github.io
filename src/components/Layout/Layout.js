@@ -64,14 +64,14 @@ class Layout extends Component {
                             sidebarDocked={!matches}
                           />
                         </Col>
-                        {matches &&
+                        {/* {matches &&
                           onPostPage &&
                           (!anchorHide || !sidebarHide) && (
                             <Col>
                               {' '}
                               <ResponsiveTopBar />{' '}
                             </Col>
-                          )}
+                          )} */}
                       </Row>
                     </AntdLayout.Header>
                     {!matches && onPostPage ? (
