@@ -4,9 +4,7 @@ import Experience from '../components/Experience'
 import Profile from '../components/Profile'
 import Skill from '../components/Skill'
 import Work from '../components/Work'
-import Button from 'antd/lib/button'
 import 'antd/lib/button/style/css'
-import { Link } from 'gatsby'
 
 const IndexPage = () => {
   return (

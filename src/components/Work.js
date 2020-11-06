@@ -1,16 +1,7 @@
 import React from 'react'
 import ContentTitle from './ContentTitle'
 import WorkAccordion from './WorkAccordion'
-import Button from 'antd/lib/button'
 import { makeStyles } from '@material-ui/core/styles'
-import Accordion from '@material-ui/core/Accordion'
-import AccordionSummary from '@material-ui/core/AccordionSummary'
-import AccordionDetails from '@material-ui/core/AccordionDetails'
-import Chip from '@material-ui/core/Chip'
-import Box from '@material-ui/core/Box'
-import Typography from '@material-ui/core/Typography'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import GitHubIcon from '@material-ui/icons/GitHub'
 
 const works = [
   {

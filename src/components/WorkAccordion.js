@@ -54,7 +54,7 @@ export default function WorkAccordion(props) {
             align="center"
             className={classes.heading}
           >
-            <a href={work.url} target="_blank" noreferrer noopener>
+            <a href={work.url} target="_blank" rel="noopener noreferrer">
               {work.name}
             </a>
           </Typography>

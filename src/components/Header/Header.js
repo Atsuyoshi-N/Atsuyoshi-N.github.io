@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
-import Menu from '../Menu'
 import { getMenuState } from '../../store/selectors'
 import { connect } from 'react-redux'
 
