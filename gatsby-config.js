@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Atsuyoshi-N note',
+    title: 'a244_note',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -86,6 +86,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-remove-trailing-slashes`,
+    `gatsby-plugin-material-ui`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

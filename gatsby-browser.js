@@ -6,5 +6,5 @@
 
 // You can delete this file if you're not using it
 import wrapWithProvider from './wrap-with-provider'
-require('prismjs/themes/prism-solarizedlight.css')
+import 'prismjs/themes/prism-solarizedlight.css'
 export const wrapRootElement = wrapWithProvider

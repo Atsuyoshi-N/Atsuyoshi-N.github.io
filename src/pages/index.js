@@ -1,46 +1,39 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import Button from 'antd/lib/button'
+import Experience from '../components/Experience'
+import Profile from '../components/Profile'
+import Skill from '../components/Skill'
+import Work from '../components/Work'
+import Typography from '@material-ui/core/Typography'
+import { makeStyles } from '@material-ui/core/styles'
 import 'antd/lib/button/style/css'
-import { Link } from 'gatsby'
+
+const useStyles = makeStyles(() => ({
+  title: {
+    color: 'cornflowerblue',
+    margin: '30px 0',
+  },
+  footer: {
+    marginTop: '30px',
+  },
+}))
 
 const IndexPage = () => {
+  const classes = useStyles()
   return (
     <Layout>
-      <div>
-        <div align="center">
-          <br />
-          <p
-            style={{
-              color: 'cornflowerblue',
-              fontSize: 50,
-              fontWeight: 'bold',
-            }}
-          >
-            @Atsuyoshi-N portfolio
-          </p>
-          <br />
-          <Link to="/blog">
-            <Button
-              type="primary"
-              size="large"
-              icon="right-circle"
-              style={{ marginRight: 10 }}
-            >
-              Blog
-            </Button>
-          </Link>
-          <Button
-            type="primary"
-            size="large"
-            icon="github"
-            href="https://github.com/Atsuyoshi-N"
-            target="_blank"
-          >
-            Github
-          </Button>
-        </div>
-      </div>
+      <Typography align="center" variant="h2" className={classes.title}>
+        @a244 Portfolio
+      </Typography>
+      <br />
+      <Profile />
+      <br />
+      <Experience />
+      <br />
+      <Skill />
+      <br />
+      <Work />
+      <div className={classes.footer}></div>
     </Layout>
   )
 }

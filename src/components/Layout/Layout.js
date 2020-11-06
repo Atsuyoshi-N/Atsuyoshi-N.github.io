@@ -7,7 +7,6 @@ import './Layout.css'
 import ResponsiveSidebar from '../ResponsiveSidebar'
 import Container from '../Container'
 import ResponsiveAnchor from '../ResponsiveAnchor'
-import ResponsiveTopBar from '../ResponsiveTopBar'
 import MediaQuery from 'react-responsive'
 import { default as AntdLayout } from 'antd/lib/layout'
 import Row from 'antd/lib/row'
@@ -42,7 +41,7 @@ class Layout extends Component {
                   <Helmet
                     title={data.site.siteMetadata.title}
                     meta={[
-                      { name: 'description', content: 'Atsuyoshi-N note' },
+                      { name: 'description', content: 'a244_note' },
                       { name: 'keywords', content: 'AtCoder ABC' },
                     ]}
                   >
@@ -64,14 +63,14 @@ class Layout extends Component {
                             sidebarDocked={!matches}
                           />
                         </Col>
-                        {matches &&
+                        {/* {matches &&
                           onPostPage &&
                           (!anchorHide || !sidebarHide) && (
                             <Col>
                               {' '}
                               <ResponsiveTopBar />{' '}
                             </Col>
-                          )}
+                          )} */}
                       </Row>
                     </AntdLayout.Header>
                     {!matches && onPostPage ? (
