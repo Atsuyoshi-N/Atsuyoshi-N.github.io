@@ -8,14 +8,14 @@ const works = [
     name: 'portfolio',
     url: 'https://github.com/Atsuyoshi-N/Atsuyoshi-N.github.io',
     description:
-      'このサイトのことです。Reactの勉強も兼ねてGatsbyを選定しました。Material UIやreact-reveal, rechartsを活用しています。GitHub Pagesにホスティングしています。',
+      'このサイトのことです。Reactの勉強も兼ねてGatsbyを選定しました。Material UIやreact-reveal, rechartsを活用しています。HostingサービスとしてGitHub Pagesを使用しています。',
     tags: ['JavaScript', 'React', 'Gatsby', 'GitHub Pages'],
   },
   {
     name: 'dotfiles',
     url: 'https://github.com/Atsuyoshi-N/dotfiles',
     description:
-      '環境構築スクリプトを自動化したものです。Macの環境を1コマンドでほとんど整えることができます。現在はMacのみの対応となっていますが、Ubuntuにも対応させる予定です。また、HomeBrewやgitに依存しないインストーラを現在作成中です。',
+      '環境構築スクリプトを自動化したものです。Macの環境を1コマンドでほとんど整えることができます。現在はMacのみの対応となっていますが、Ubuntuにも対応予定です。Macに関しては、HomeBrewやgitに依存しないインストーラを現在作成中です。',
     tags: ['shellscript', 'vimscript'],
   },
 ]

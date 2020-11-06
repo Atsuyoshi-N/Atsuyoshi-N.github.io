@@ -9,7 +9,7 @@ const skillSets = [
     level: 60,
     history: '3年程',
     description:
-      '基本的な文法は調べずに記述できます。簡単なスクリプトを組む時によく使います。メタプログラミングについては詳しくありません。最近はしばらく触っていないので思い出すのに時間が必要になるかもしれません。',
+      '基本的な文法は調べずに記述できます。簡単なスクリプトを組む時によく使います。メタプログラミングについては詳しくありません。最近はしばらくスクリプトを書いていないです。',
   },
   {
     technorogy: 'C++',
@@ -23,42 +23,42 @@ const skillSets = [
     level: 50,
     history: '2年半程',
     description:
-      '生JS/TypeScriptなど色々触りましたが、DOM操作はjQueryに任せる場面が多かったため、使用する場合にはドキュメントを参照しながらになります。。サーバー側での使用は経験が浅いです。TypeScriptには慣れておらず、複雑な型定義はできません。',
+      '生JS/TypeScriptなど色々触りましたが、DOM操作はjQueryに任せる場面が多かったため、使用する場合にはドキュメントを参照しながらになります。サーバー側での使用は経験が浅いです。TypeScriptには慣れておらず、複雑な型定義はできません。',
   },
   {
     technorogy: 'Rails',
     level: 60,
     history: '3年程',
     description:
-      '基本的なMVCアーキテクチャに則った開発をすることができます。FatModel/FatControllerへの対処やPOLO/Form Objectなどには詳しくありません。',
+      '基本的なMVCアーキテクチャに則ったアプリを開発をすることができます。一人で簡単なプロダクションレベルのサービスの立ち上げができます。FatModel/FatControllerへの対処やPOLO、Form Objectなどには詳しくありません。',
   },
   {
     technorogy: 'React',
     level: 55,
     history: '半年程',
     description:
-      'このページはReactで記述されています。SPAを作成するくらいはできますがCSSフレームワークのドキュメントによるおかげが強いです。関数コンポーネントで記述できますが、TypeScriptとの組み合わせは苦手です。reduxはredux-toolkitが便利だとは知っていますが使い方は詳しくありません。',
+      'このページはReactで記述されています。簡単なSPAを作成することができます。スタイリングは苦手なので、CSSフレームワークに任せることが多いです。今のところTypeScriptとの組み合わせは苦手です。reduxはredux-toolkitが便利だとは知っていますがチュートリアルをこなした程度の知識しかありません。',
   },
   {
     technorogy: 'Heroku',
     level: 70,
     history: '3年程',
     description:
-      '基本的なことはできます。Heroku CIについても知見があります。Web Driversにつまづいた経験があるので、Selenium関連は知見があるつもりです。',
+      '基本的なことはできます。Heroku CIについても知見があります。Web Driversにつまづいた経験があるので、Web DriversやSelenium関連は知見があります。',
   },
   {
     technorogy: 'Vim',
     level: 70,
     history: '3年半程',
     description:
-      '基本的な操作をすることができます。普段使いをしています。モーションを使った文字列操作や、場面に応じてマクロを使用することができます。',
+      '基本的な操作をすることができます。普段使いをしています。モーションを使った文字列操作や、簡単なマクロを使った操作なども行うことができます。',
   },
   {
     technorogy: 'Git',
     level: 60,
     history: '2年半程',
     description:
-      '基本的な操作ができ、GitHubへの連携も行えます。rebaseなどもできますが、基本的にtigを使用しています。reflogも知識としては持っていますが、使ったことは数回しかありません。',
+      'Add, Commit, Push, Pull, Cloneといった基本的な操作を行うことができます。GitHubの操作は詳しいですが、GitLabには知見がありません。rebaseなどのコマンドの実行にはtigを使用することがあります。Git Flowに則った開発経験があります。',
   },
 ]
 

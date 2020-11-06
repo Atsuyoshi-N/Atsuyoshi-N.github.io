@@ -21,21 +21,21 @@ const experiences = [
   },
   {
     id: 2,
-    term: '2017年11月~2019年5月',
-    icon: <FastfoodIcon />,
-    company: '株式会社OMAKASE',
-    role: 'エンジニアインターン',
-    description:
-      'Ruby on RailsとjQueryをメインに使用しながら高級飲食店の予約サービスOMAKASEのエンハンスメント開発を行いました。また、新規サービス立ち上げにも関わり、CIのセットアップやリンターの設定、Railsを用いたサーバーサイドの開発やReactを用いたフロントエンドの開発に貢献しました。',
-  },
-  {
-    id: 3,
     term: '2018年2月~2018年3月',
     icon: <ChatIcon />,
     company: 'LINE株式会社',
     role: 'スクールコース',
     description:
       '前半の1ヶ月でRuby on RailsとSwiftの基礎を学び、後半の1ヶ月でペアプロを行いました。',
+  },
+  {
+    id: 3,
+    term: '2017年11月~2019年5月',
+    icon: <FastfoodIcon />,
+    company: '株式会社OMAKASE',
+    role: 'エンジニアインターン',
+    description:
+      'Ruby on RailsとjQueryをメインに使用しながら高級飲食店の予約サービスOMAKASEのエンハンスメント開発を行いました。また、新規サービス立ち上げにも関わり、CIのセットアップやリンターの設定、Railsを用いたサーバーサイドの開発やReactを用いたフロントエンドの開発に貢献しました。',
   },
   {
     id: 4,
