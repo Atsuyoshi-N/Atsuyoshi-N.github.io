@@ -40,7 +40,7 @@ export default function SkillSetCard(props) {
           <Typography
             display="block"
             align="center"
-            omponent="subtitle2"
+            component="subtitle2"
             className={classes.history}
           >
             {skillSet.history}

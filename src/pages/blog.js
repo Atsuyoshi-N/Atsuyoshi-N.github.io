@@ -1,7 +1,8 @@
 import React from 'react'
-import { graphql } from "gatsby"
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import PostCard from '../components/PostCard';
+import PostCard from '../components/PostCard'
+import 'katex/dist/katex.min.css'
 
 const BlogPage = ({
   data: {
@@ -9,7 +10,7 @@ const BlogPage = ({
   },
 }) => {
   const posts = edges
-    .filter(edge => !! edge.node.frontmatter.date)
+    .filter(edge => !!edge.node.frontmatter.date)
     .map(edge => <PostCard key={edge.node.id} post={edge.node} />)
   return (
     <Layout>
@@ -24,7 +25,7 @@ export const pageQuery = graphql`
   query($path: String!) {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { rootPage: {eq: $path }}}
+      filter: { frontmatter: { rootPage: { eq: $path } } }
     ) {
       edges {
         node {
@@ -32,12 +33,13 @@ export const pageQuery = graphql`
             slug
           }
           id
-          excerpt(pruneLength: 250)
+          excerpt(pruneLength: 300)
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
             rootPage
           }
+          html
         }
       }
     }
