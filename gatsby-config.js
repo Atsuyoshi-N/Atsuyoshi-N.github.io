@@ -82,11 +82,18 @@ module.exports = {
               classPrefix: 'language-',
             },
           },
+          {
+            resolve: `gatsby-plugin-material-ui`,
+            options: {
+              stylesProvider: {
+                injectFirst: true,
+              },
+            },
+          },
         ],
       },
     },
     `gatsby-plugin-remove-trailing-slashes`,
-    `gatsby-plugin-material-ui`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

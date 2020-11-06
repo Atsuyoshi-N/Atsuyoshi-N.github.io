@@ -25,7 +25,6 @@ const useStyles = makeStyles(theme => ({
     },
   },
   tagChip: {
-    width: '100%',
     display: 'flex',
     justifyContent: 'center',
     flexWrap: 'wrap',
