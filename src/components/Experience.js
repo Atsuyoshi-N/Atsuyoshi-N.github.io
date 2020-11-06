@@ -2,6 +2,7 @@ import React from 'react'
 import ExperienceTimeLineItem from './ExperienceTimeLineItem'
 import ContentTitle from './ContentTitle'
 import Fade from 'react-reveal/Fade'
+import MediaQuery from 'react-responsive'
 import Timeline from '@material-ui/lab/Timeline'
 import FastfoodIcon from '@material-ui/icons/Fastfood'
 import HotelIcon from '@material-ui/icons/Hotel'
@@ -69,15 +70,16 @@ export default function Experience() {
   return (
     <Fade bottom>
       <ContentTitle title="Experiences" />
-      {window.matchMedia('(max-width: 767px)').matches ? (
+      <MediaQuery query="(max-width: 767px)">
         <Timeline align="left">
           <ExperienceTimeLineItem experiences={experiences} isNarrow="true" />
         </Timeline>
-      ) : (
+      </MediaQuery>
+      <MediaQuery query="(min-width: 768px)">
         <Timeline align="left">
           <ExperienceTimeLineItem experiences={experiences} isNarrow="false" />
         </Timeline>
-      )}
+      </MediaQuery>
     </Fade>
   )
 }
