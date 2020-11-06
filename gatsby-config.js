@@ -3,6 +3,16 @@ module.exports = {
     title: 'a244_note',
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-material-ui',
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
+    'gatsby-plugin-styled-components',
+    `babel-plugin-styled-components`,
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-source-filesystem`,
@@ -80,14 +90,6 @@ module.exports = {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: 'language-',
-            },
-          },
-          {
-            resolve: `gatsby-plugin-material-ui`,
-            options: {
-              stylesProvider: {
-                injectFirst: true,
-              },
             },
           },
         ],
