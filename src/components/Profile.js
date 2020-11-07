@@ -21,7 +21,7 @@ function createData(name, title, url) {
 }
 
 const rows = [
-  createData('所属', '横浜国立大学理工学部数物電情情報系学科', ''),
+  createData('所属', '横浜国立大学理工学部数物電子情報系学科', ''),
   createData('GitHub', 'Atsuyoshi-N', 'https://github.com/Atsuyoshi-N'),
   createData('Twitter', '@a244_n', 'https://twitter.com/a244_n'),
   createData('ブログ', 'a244_note/blog', '/blog'),

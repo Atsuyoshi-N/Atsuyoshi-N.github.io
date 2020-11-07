@@ -48,7 +48,7 @@ const skillSets = [
   },
   {
     technorogy: 'Vim',
-    level: 70,
+    level: 65,
     history: '3年半程',
     description:
       '基本的な操作をすることができます。普段使いをしています。モーションを使った文字列操作や、簡単なマクロを使った操作なども行うことができます。',
