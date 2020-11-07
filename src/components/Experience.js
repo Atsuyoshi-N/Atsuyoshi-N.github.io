@@ -3,6 +3,7 @@ import ExperienceTimeLineItem from './ExperienceTimeLineItem'
 import ContentTitle from './ContentTitle'
 import Fade from 'react-reveal/Fade'
 import MediaQuery from 'react-responsive'
+import { makeStyles } from '@material-ui/core/styles'
 import Timeline from '@material-ui/lab/Timeline'
 import FastfoodIcon from '@material-ui/icons/Fastfood'
 import HotelIcon from '@material-ui/icons/Hotel'
@@ -66,20 +67,42 @@ const experiences = [
   },
 ].reverse()
 
+const useStyles = makeStyles({
+  title: {
+    padding: '6px 16px',
+    textAlign: 'center',
+    minWidth: '150px',
+  },
+  description: {
+    textAlign: 'left',
+  },
+})
+
 export default function Experience() {
+  const classes = useStyles()
   return (
-    <Fade bottom>
+    <>
       <ContentTitle title="Experiences" />
-      <MediaQuery query="(max-width: 767px)">
-        <Timeline align="left">
-          <ExperienceTimeLineItem experiences={experiences} isNarrow="true" />
-        </Timeline>
-      </MediaQuery>
-      <MediaQuery query="(min-width: 768px)">
-        <Timeline align="left">
-          <ExperienceTimeLineItem experiences={experiences} isNarrow="false" />
-        </Timeline>
-      </MediaQuery>
-    </Fade>
+      <Fade bottom>
+        <MediaQuery query="(max-width: 767px)">
+          <Timeline align="left">
+            <ExperienceTimeLineItem
+              experiences={experiences}
+              isNarrow="true"
+              classes={classes}
+            />
+          </Timeline>
+        </MediaQuery>
+        <MediaQuery query="(min-width: 768px)">
+          <Timeline align="left">
+            <ExperienceTimeLineItem
+              experiences={experiences}
+              isNarrow="false"
+              classes={classes}
+            />
+          </Timeline>
+        </MediaQuery>
+      </Fade>
+    </>
   )
 }

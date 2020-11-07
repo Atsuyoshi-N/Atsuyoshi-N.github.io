@@ -11,12 +11,6 @@ const useStyles = makeStyles({
     minWidth: 275,
     height: 650,
   },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
   history: {
     marginBottom: 20,
     borderBottom: '1px solid cornflowerblue',
