@@ -36,9 +36,6 @@ const useStyles = makeStyles(theme => ({
     display: 'block',
     width: '100%',
   },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
   sectionMobile: {
     display: 'flex',
     [theme.breakpoints.up('md')]: {
@@ -127,7 +124,7 @@ export default function MobileHeader(props) {
   return (
     <div className={classes.headerContainer}>
       <div>
-        <Typography variant="h5" className={classes.headerBlock}>
+        <Typography variant="h5">
           <Link to="/" className={classes.pageLink}>
             {siteTitle}
           </Link>

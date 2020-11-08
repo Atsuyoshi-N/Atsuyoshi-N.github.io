@@ -6,24 +6,23 @@ import GitHubIcon from '@material-ui/icons/GitHub'
 import TwitterIcon from '@material-ui/icons/Twitter'
 
 const useStyles = makeStyles({
-  headerContainer: {
+  PCHeaderContainer: {
     width: '100%',
     margin: '0 10%',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  headerContainerLeft: {},
+  PCPageLink: {
+    color: 'white',
+    textDecoration: 'none',
+  },
   headerContainerRight: {
     display: 'flex',
     justifyContent: 'flex-end',
     '& > *': {
       padding: '0 7px',
     },
-  },
-  pageLink: {
-    color: 'white',
-    textDecoration: 'none',
   },
   icons: {
     marginTop: '5px',
@@ -35,22 +34,22 @@ export default function PCHeader(props) {
   const { siteTitle } = props
   const classes = useStyles()
   return (
-    <div className={classes.headerContainer}>
-      <div className={classes.headerContainerLeft}>
-        <Typography variant="h5" className={classes.headerBlock}>
-          <Link to="/" className={classes.pageLink}>
+    <div className={classes.PCHeaderContainer}>
+      <div>
+        <Typography variant="h5">
+          <Link to="/" className={classes.PCPageLink}>
             {siteTitle}
           </Link>
         </Typography>
       </div>
       <div className={classes.headerContainerRight}>
-        <Typography variant="h5" className={classes.headerBlock}>
-          <Link to="/" className={classes.pageLink}>
+        <Typography variant="h5">
+          <Link to="/" className={classes.PCPageLink}>
             Portfolio
           </Link>
         </Typography>
-        <Typography variant="h5" className={classes.headerBlock}>
-          <Link to="/blog" className={classes.pageLink}>
+        <Typography variant="h5">
+          <Link to="/blog" className={classes.PCPageLink}>
             Blog
           </Link>
         </Typography>

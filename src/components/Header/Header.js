@@ -3,7 +3,7 @@ import PCHeader from './PCHeader'
 import MobileHeader from './MobileHeader'
 import { getMenuState } from '../../store/selectors'
 import { connect } from 'react-redux'
-import MediaQuery from 'react-responsive'
+import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles({
@@ -17,17 +17,17 @@ const useStyles = makeStyles({
 })
 
 function Header(props) {
+  const breakpoints = useBreakpoint()
   const classes = useStyles()
   const { siteTitle } = props
 
   return (
     <div className={classes.root}>
-      <MediaQuery query={'(max-width: 767px'}>
+      {breakpoints.sm ? (
         <MobileHeader siteTitle={siteTitle} />
-      </MediaQuery>
-      <MediaQuery query={'(min-width: 768px'}>
+      ) : (
         <PCHeader siteTitle={siteTitle} />
-      </MediaQuery>
+      )}
     </div>
   )
 }
