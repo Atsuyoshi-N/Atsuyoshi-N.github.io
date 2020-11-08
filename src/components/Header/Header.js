@@ -1,12 +1,9 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import PCHeader from './PCHeader'
 import { getMenuState } from '../../store/selectors'
 import { connect } from 'react-redux'
+import MediaQuery from 'react-responsive'
 import { makeStyles } from '@material-ui/core/styles'
-import { Typography } from '@material-ui/core'
-import GitHubIcon from '@material-ui/icons/GitHub'
-import TwitterIcon from '@material-ui/icons/Twitter'
 
 const useStyles = makeStyles({
   root: {
@@ -25,7 +22,12 @@ function Header(props) {
 
   return (
     <div className={classes.root}>
-      <PCHeader siteTitle={siteTitle} />
+      <MediaQuery query={'(max-width: 767px'}>
+        <p> hello world</p>
+      </MediaQuery>
+      <MediaQuery query={'(min-width: 768px'}>
+        <PCHeader siteTitle={siteTitle} />
+      </MediaQuery>
     </div>
   )
 }
