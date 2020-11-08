@@ -8,8 +8,6 @@ hideAnchor: true
 tags: ['AtCoder', 'JOI', '全探索', '二分探索']
 ---
 
-[AtCoder](/tags/at-coder) / [JOI](/tags/joi) / [全探索](/tags/全探索) / [二分探索](/tags/二分探索)
-
 ## 問題概要
 
 複数の座標が与えられ、それらの座標を結んでできる正方形のうち面積最大となるものの面積を求めよ。

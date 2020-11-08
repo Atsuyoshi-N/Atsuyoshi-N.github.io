@@ -8,8 +8,6 @@ hideAnchor: true
 tags: ['AtCoder', 'ABC', 'ABC154', '累積和']
 ---
 
-[AtCoder](/tags/at-coder) / [ABC](/tags/abc) / [ABC154](/tags/abc-154) / [累積和](/tags/累積和)
-
 ## 問題概要
 
 $N$個のサイコロから連続する$K$個選んだときの出る目の合計の期待値の最大値を求めよ。

@@ -8,8 +8,6 @@ hideAnchor: true
 tags: ['AtCoder']
 ---
 
-tags: [AtCoder](/tags/at-coder)
-
 ## 問題概要
 
 $N$人の買い物客がそれぞれマス$A_i$にある品物とマス$B_i$にある品物を購入する。入り口と出口を設置する時、買い物客は次のように行動する。
