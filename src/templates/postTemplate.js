@@ -6,6 +6,8 @@ import kebabCase from 'lodash/kebabCase'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 import 'katex/dist/katex.min.css'
+import '../styles/blog.css'
+import '../styles/codehighlight.css'
 import {
   onSidebarContentSelected,
   onSetSidebarContentEntry,

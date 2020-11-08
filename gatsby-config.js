@@ -61,6 +61,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-remark-responsive-iframe`,
           `gatsby-remark-katex`,
           {
             resolve: `gatsby-remark-autolink-headers`,
@@ -84,6 +85,7 @@ module.exports = {
             resolve: `gatsby-remark-external-links`,
             options: {
               target: '_blank',
+              rel: 'noopener noreferrer',
             },
           },
           {

@@ -1,0 +1,24 @@
+h2 {
+  padding-right: 0;
+  font-size: 1.55em;
+  margin-bottom: 1em;
+  margin-top: 1.5em;
+}
+
+h2:after {
+  display: block;
+  height: 2px;
+  content: '';
+  background: linear-gradient(
+    to right,
+    cornflowerblue 0%,
+    rgba(118, 214, 247, 0.7) 100%
+  );
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  border-bottom: 1px solid #ccc;
+}
