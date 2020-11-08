@@ -1,44 +1,31 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import PCHeader from './PCHeader'
 import { getMenuState } from '../../store/selectors'
 import { connect } from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
+import GitHubIcon from '@material-ui/icons/GitHub'
+import TwitterIcon from '@material-ui/icons/Twitter'
 
 const useStyles = makeStyles({
   root: {
     width: '100%',
+    padding: '0 10%',
     height: 55,
     marginBottom: 20,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
     backgroundColor: 'cornflowerblue',
-  },
-  headerBlock: {
-    margin: '0 20%',
-  },
-  pageLink: {
-    color: 'white',
-    textDecoration: 'none',
+    display: 'flex',
   },
 })
 
 function Header(props) {
   const classes = useStyles()
+  const { siteTitle } = props
 
   return (
     <div className={classes.root}>
-      <Typography variant="h5" className={classes.headerBlock}>
-        <Link to="/" className={classes.pageLink}>
-          Portfolio
-        </Link>
-      </Typography>
-      <Typography variant="h5" className={classes.headerBlock}>
-        <Link to="/blog" className={classes.pageLink}>
-          Blog
-        </Link>
-      </Typography>
+      <PCHeader siteTitle={siteTitle} />
     </div>
   )
 }
