@@ -1,8 +1,8 @@
 import React from 'react'
 import ExperienceTimeLineItem from './ExperienceTimeLineItem'
 import ContentTitle from './ContentTitle'
+import { useBreakpoint } from 'gatsby-plugin-breakpoints'
 import Fade from 'react-reveal/Fade'
-import MediaQuery from 'react-responsive'
 import { makeStyles } from '@material-ui/core/styles'
 import Timeline from '@material-ui/lab/Timeline'
 import FastfoodIcon from '@material-ui/icons/Fastfood'
@@ -79,12 +79,13 @@ const useStyles = makeStyles({
 })
 
 export default function Experience() {
+  const breakpoints = useBreakpoint()
   const classes = useStyles()
   return (
     <>
       <ContentTitle title="Experiences" />
       <Fade bottom>
-        <MediaQuery query="(max-width: 767px)">
+        {breakpoints.sm ? (
           <Timeline align="left">
             <ExperienceTimeLineItem
               experiences={experiences}
@@ -92,8 +93,7 @@ export default function Experience() {
               classes={classes}
             />
           </Timeline>
-        </MediaQuery>
-        <MediaQuery query="(min-width: 768px)">
+        ) : (
           <Timeline align="left">
             <ExperienceTimeLineItem
               experiences={experiences}
@@ -101,7 +101,7 @@ export default function Experience() {
               classes={classes}
             />
           </Timeline>
-        </MediaQuery>
+        )}
       </Fade>
     </>
   )
