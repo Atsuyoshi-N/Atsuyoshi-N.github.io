@@ -3,17 +3,19 @@ import { Link } from 'gatsby'
 import kebabCase from 'lodash/kebabCase'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
+import LocalOfferIcon from '@material-ui/icons/LocalOffer'
 
 const useStyles = makeStyles({
   tagsList: {
     listStyle: 'none',
     display: 'flex',
+    flexWrap: 'wrap',
     justifyContent: 'flex-start',
     margin: 0,
   },
   tagItem: {
     color: 'rgba(0, 0, 0, 0.54)',
-    margin: '0 10px 0 0',
+    margin: '0 5px 0',
   },
 })
 
@@ -22,6 +24,7 @@ export default function TagList(props) {
   const { frontmatter } = props
   return (
     <ul className={classes.tagsList}>
+      <LocalOfferIcon fontSize="small" />
       {frontmatter.tags !== null &&
         frontmatter.tags.map(tag => (
           <li>

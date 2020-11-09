@@ -12,11 +12,14 @@ const useStyles = makeStyles({
     margin: '0 10% 30px',
   },
   postTitleLink: {
-    color: 'cornflowerblue',
     textDecoration: 'none',
     '&:hover': {
+      color: 'cornflowerblue',
       borderBottom: '1px solid cornflowerblue',
     },
+  },
+  readMore: {
+    marginTop: '15px',
   },
 })
 
@@ -42,6 +45,7 @@ export default function PostCard({ post }) {
               <Typography
                 variant="h4"
                 display="inline"
+                color="textSecondary"
                 className={classes.postTitleLink}
               >
                 {post.frontmatter.title}
@@ -57,7 +61,11 @@ export default function PostCard({ post }) {
             dangerouslySetInnerHTML={{ __html: post.excerpt }}
           ></div>
         </Typography>
-        <Typography align="right" style={{ marginTop: '15px' }}>
+        <Typography
+          align="right"
+          variant="subtitle2"
+          className={classes.readMore}
+        >
           <Link to={`${post.fields.slug}`}>続きを読む</Link>
         </Typography>
       </Card>
