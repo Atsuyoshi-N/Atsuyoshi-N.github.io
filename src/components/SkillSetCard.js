@@ -25,7 +25,7 @@ export default function SkillSetCard(props) {
     <Grid item xs={12} sm={6} md={4}>
       <Card className={classes.root} variant="outlined">
         <CardContent>
-          <Typography variant="h5" component="h2">
+          <Typography variant="h5" component="h2" align="center">
             {skillSet.technorogy}
           </Typography>
           <SkillLevelPiChart skillSet={skillSet} />
