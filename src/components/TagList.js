@@ -9,6 +9,7 @@ const useStyles = makeStyles({
     listStyle: 'none',
     display: 'flex',
     justifyContent: 'flex-start',
+    margin: 0,
   },
   tagItem: {
     color: 'rgba(0, 0, 0, 0.54)',

@@ -11,31 +11,46 @@ const useStyles = makeStyles({
   root: {
     margin: '0 10% 30px',
   },
+  postTitleLink: {
+    color: 'cornflowerblue',
+    textDecoration: 'none',
+    '&:hover': {
+      borderBottom: '1px solid cornflowerblue',
+    },
+  },
 })
 
 export default function PostCard({ post }) {
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      <TagList frontmatter={post.frontmatter} />
       <Card
         marginBottom="30px"
         title={
           <div>
-            <Link to={post.fields.slug}>
-              <Typography variant="h4">{post.frontmatter.title}</Typography>
-            </Link>
             <span
               style={{
-                float: 'right',
                 color: 'grey',
+                marginBottom: '10px',
               }}
             >
               {post.frontmatter.date}
             </span>
+            <br />
+            <br />
+            <Link to={post.fields.slug}>
+              <Typography
+                variant="h4"
+                display="inline"
+                className={classes.postTitleLink}
+              >
+                {post.frontmatter.title}
+              </Typography>
+            </Link>
           </div>
         }
       >
+        <TagList frontmatter={post.frontmatter} />
         <Typography>
           <div
             className="blog-post-content"
