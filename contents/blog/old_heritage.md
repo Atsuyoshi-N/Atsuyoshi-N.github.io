@@ -5,10 +5,9 @@ rootPage: /blog
 sidebar: Blog
 showTitle: true
 hideAnchor: true
+category: '競プロ'
 tags: ['AtCoder', 'JOI', '全探索', '二分探索']
 ---
-
-[AtCoder](/tags/at-coder) / [JOI](/tags/joi) / [全探索](/tags/全探索) / [二分探索](/tags/二分探索)
 
 ## 問題概要
 

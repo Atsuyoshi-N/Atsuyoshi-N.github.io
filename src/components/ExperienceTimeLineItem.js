@@ -29,7 +29,7 @@ export default function ExperienceTimeLineItem(props) {
           <Typography variant="h6" component="h1">
             {experience.company}
           </Typography>
-          <Typography variant="h6" component="h2">
+          <Typography variant="h6" component="h3">
             {experience.role}
           </Typography>
           {isNarrow === 'true' && (

@@ -7,18 +7,18 @@ import { Typography } from '@material-ui/core'
 // Components
 import { Link, graphql } from 'gatsby'
 
-const Tags = ({ pageContext, data }) => {
-  const { tag } = pageContext
+const Categories = ({ pageContext, data }) => {
+  const { category } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
-  const tagHeader = `${totalCount} post${
+  const categoryHeader = `${totalCount} post${
     totalCount === 1 ? '' : 's'
-  } tagged with "${tag}"`
+  } categorized with "${category}"`
 
   return (
     <Layout>
       <div>
         <Typography variant="h5" align="center" color="textSecondary">
-          {tagHeader}
+          {categoryHeader}
         </Typography>
         {edges.map(({ node }) => {
           const { slug } = node.fields
@@ -28,7 +28,7 @@ const Tags = ({ pageContext, data }) => {
               This links to a page that does not yet exist.
               You'll come back to it!
             */}
-        <Link to="/tags">
+        <Link to="/categories">
           <Typography
             variant="h4"
             align="center"
@@ -40,7 +40,7 @@ const Tags = ({ pageContext, data }) => {
               },
             }}
           >
-            View All tags
+            View All Categories
           </Typography>
         </Link>
       </div>
@@ -48,9 +48,9 @@ const Tags = ({ pageContext, data }) => {
   )
 }
 
-Tags.propTypes = {
+Categories.propTypes = {
   pageContext: PropTypes.shape({
-    tag: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
   }),
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
@@ -71,14 +71,14 @@ Tags.propTypes = {
   }),
 }
 
-export default Tags
+export default Categories
 
 export const pageQuery = graphql`
-  query($tag: String) {
+  query($category: String) {
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
+      filter: { frontmatter: { category: { eq: $category } } }
     ) {
       totalCount
       edges {
@@ -90,6 +90,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             date(formatString: "YYYY-MM-DD")
+            category
             tags
           }
         }

@@ -7,6 +7,7 @@ module.exports = exports.createPages = ({ actions, graphql }) => {
 
   const postTemplate = path.resolve(`src/templates/postTemplate.js`)
   const tagTemplate = path.resolve(`src/templates/tags.js`)
+  const categoryTemplate = path.resolve(`src/templates/categories.js`)
 
   return graphql(`
     {
@@ -20,9 +21,15 @@ module.exports = exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
+              category
               tags
             }
           }
+        }
+      }
+      categoriesGroup: allMarkdownRemark(limit: 2000) {
+        group(field: frontmatter___category) {
+          fieldValue
         }
       }
       tagsGroup: allMarkdownRemark(limit: 2000) {
@@ -44,6 +51,16 @@ module.exports = exports.createPages = ({ actions, graphql }) => {
       })
     })
 
+    const categories = result.data.categoriesGroup.group
+    categories.forEach(category => {
+      createPage({
+        path: `/categories/${_.kebabCase(category.fieldValue)}`,
+        component: categoryTemplate,
+        context: {
+          category: category.fieldValue,
+        },
+      })
+    })
     const tags = result.data.tagsGroup.group
     tags.forEach(tag => {
       createPage({

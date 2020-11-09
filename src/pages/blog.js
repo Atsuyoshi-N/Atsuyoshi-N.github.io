@@ -33,11 +33,12 @@ export const pageQuery = graphql`
             slug
           }
           id
-          excerpt(pruneLength: 300)
+          excerpt(format: HTML, pruneLength: 100, truncate: true)
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
+            date(formatString: "YYYY-MM-DD")
             rootPage
+            title
+            tags
           }
           html
         }

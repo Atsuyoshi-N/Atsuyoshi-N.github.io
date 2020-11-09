@@ -61,6 +61,7 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          `gatsby-remark-responsive-iframe`,
           `gatsby-remark-katex`,
           {
             resolve: `gatsby-remark-autolink-headers`,
@@ -84,6 +85,7 @@ module.exports = {
             resolve: `gatsby-remark-external-links`,
             options: {
               target: '_blank',
+              rel: 'noopener noreferrer',
             },
           },
           {
@@ -96,6 +98,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-remove-trailing-slashes`,
+    `gatsby-plugin-breakpoints`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

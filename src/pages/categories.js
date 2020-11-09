@@ -10,7 +10,7 @@ import kebabCase from 'lodash/kebabCase'
 import { Helmet } from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 
-const TagsPage = ({
+const CategoryPage = ({
   data: {
     allMarkdownRemark: { group },
     site: {
@@ -22,14 +22,14 @@ const TagsPage = ({
     <div>
       <Helmet title={title} />
       <div style={{ margin: '0 10%' }}>
-        <Typography variant="h5">Tags</Typography>
+        <Typography variant="h5">Categories</Typography>
         <br />
         <ul>
-          {group.map(tag => (
-            <li key={tag.fieldValue}>
-              <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+          {group.map(category => (
+            <li key={category.fieldValue}>
+              <Link to={`/categories/${kebabCase(category.fieldValue)}/`}>
                 <Typography>
-                  {tag.fieldValue} ({tag.totalCount})
+                  {category.fieldValue} ({category.totalCount})
                 </Typography>
               </Link>
             </li>
@@ -40,7 +40,7 @@ const TagsPage = ({
   </Layout>
 )
 
-TagsPage.propTypes = {
+CategoryPage.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       group: PropTypes.arrayOf(
@@ -58,7 +58,7 @@ TagsPage.propTypes = {
   }),
 }
 
-export default TagsPage
+export default CategoryPage
 
 export const pageQuery = graphql`
   query {
@@ -68,7 +68,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(limit: 2000) {
-      group(field: frontmatter___tags) {
+      group(field: frontmatter___category) {
         fieldValue
         totalCount
       }

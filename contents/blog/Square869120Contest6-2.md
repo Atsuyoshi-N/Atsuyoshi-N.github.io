@@ -5,10 +5,9 @@ rootPage: /blog
 sidebar: Blog
 showTitle: true
 hideAnchor: true
+category: '競プロ'
 tags: ['AtCoder']
 ---
-
-tags: [AtCoder](/tags/at-coder)
 
 ## 問題概要
 
