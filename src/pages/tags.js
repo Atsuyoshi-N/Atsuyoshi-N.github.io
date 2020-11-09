@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../components/Layout'
+import { Typography } from '@material-ui/core'
 
 // Utilities
 import kebabCase from 'lodash/kebabCase'
@@ -20,13 +21,16 @@ const TagsPage = ({
   <Layout>
     <div>
       <Helmet title={title} />
-      <div>
-        <h1>Tags</h1>
+      <div style={{ margin: '0 10%' }}>
+        <Typography variant="h5">Tags</Typography>
+        <br />
         <ul>
           {group.map(tag => (
             <li key={tag.fieldValue}>
               <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                {tag.fieldValue} ({tag.totalCount})
+                <Typography>
+                  {tag.fieldValue} ({tag.totalCount})
+                </Typography>
               </Link>
             </li>
           ))}

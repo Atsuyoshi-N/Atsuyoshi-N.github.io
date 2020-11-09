@@ -53,6 +53,11 @@ export default function PCHeader(props) {
             Blog
           </Link>
         </Typography>
+        <Typography variant="h5">
+          <Link to="/tags" className={classes.PCPageLink}>
+            Tags
+          </Link>
+        </Typography>
         <a
           href="https://github.com/Atsuyoshi-N"
           rel="noopener noreferrer"

@@ -83,14 +83,21 @@ export default function MobileHeader(props) {
             </Typography>
           </Link>
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={handleMobileMenuClose}>
           <Link to="/blog" className={classes.menuLink}>
             <Typography variant="h5" color="textSecondary">
               Blog
             </Typography>
           </Link>
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={handleMobileMenuClose}>
+          <Link to="/tags" className={classes.menuLink}>
+            <Typography variant="h5" color="textSecondary">
+              Tags
+            </Typography>
+          </Link>
+        </MenuItem>
+        <MenuItem onClick={handleMobileMenuClose}>
           <a
             href="https://github.com/Atsuyoshi-N"
             className={classes.menuLink}
@@ -102,7 +109,7 @@ export default function MobileHeader(props) {
             </Typography>
           </a>
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={handleMobileMenuClose}>
           <a
             href="https://twitter.com/a244_n"
             className={classes.menuLink}
