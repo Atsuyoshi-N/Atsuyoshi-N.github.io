@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import TagList from '../TagList'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 import Card from 'antd/lib/card'
@@ -16,12 +17,13 @@ export default function PostCard({ post }) {
   const classes = useStyles()
   return (
     <div className={classes.root}>
+      <TagList frontmatter={post.frontmatter} />
       <Card
         marginBottom="30px"
         title={
           <div>
             <Link to={post.fields.slug}>
-              <Typography variant="h5">{post.frontmatter.title}</Typography>
+              <Typography variant="h4">{post.frontmatter.title}</Typography>
             </Link>
             <span
               style={{
@@ -34,10 +36,15 @@ export default function PostCard({ post }) {
           </div>
         }
       >
-        <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
+        <Typography>
+          <div
+            className="blog-post-content"
+            dangerouslySetInnerHTML={{ __html: post.excerpt }}
+          ></div>
+        </Typography>
+        <Typography align="right" style={{ marginTop: '15px' }}>
+          <Link to={`${post.fields.slug}`}>続きを読む</Link>
+        </Typography>
       </Card>
     </div>
   )
