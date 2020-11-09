@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import PostCard from '../components/PostCard'
 import Layout from '../components/Layout'
+import { Typography } from '@material-ui/core'
 
 // Components
 import { Link, graphql } from 'gatsby'
@@ -15,23 +17,32 @@ const Tags = ({ pageContext, data }) => {
   return (
     <Layout>
       <div>
-        <h1>{tagHeader}</h1>
-        <ul>
-          {edges.map(({ node }) => {
-            const { slug } = node.fields
-            const { title } = node.frontmatter
-            return (
-              <li key={slug}>
-                <Link to={slug}>{title}</Link>
-              </li>
-            )
-          })}
-        </ul>
+        <Typography variant="h5" align="center" color="textSecondary">
+          {tagHeader}
+        </Typography>
+        {edges.map(({ node }) => {
+          const { slug } = node.fields
+          return <PostCard key={slug} post={node} />
+        })}
         {/*
               This links to a page that does not yet exist.
               You'll come back to it!
             */}
-        <Link to="/tags">All tags</Link>
+        <Link to="/tags">
+          <Typography
+            variant="h4"
+            align="center"
+            color="primary"
+            style={{
+              color: 'cornflowerblue',
+              '&:hover': {
+                cursor: 'pointer',
+              },
+            }}
+          >
+            View All tags
+          </Typography>
+        </Link>
       </div>
     </Layout>
   )
@@ -75,8 +86,11 @@ export const pageQuery = graphql`
           fields {
             slug
           }
+          excerpt(format: HTML, pruneLength: 100, truncate: true)
           frontmatter {
             title
+            date(formatString: "YYYY-MM-DD")
+            tags
           }
         }
       }
