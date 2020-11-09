@@ -62,7 +62,7 @@ const experiences = [
     term: '2020年６月~現在',
     icon: <HotelIcon />,
     company: '休職中',
-    role: '求職中',
+    role: '',
     description: '現在求職中です。',
   },
 ].reverse()

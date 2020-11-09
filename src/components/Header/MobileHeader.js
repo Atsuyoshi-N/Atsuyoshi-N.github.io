@@ -91,9 +91,16 @@ export default function MobileHeader(props) {
           </Link>
         </MenuItem>
         <MenuItem onClick={handleMobileMenuClose}>
+          <Link to="/categories" className={classes.menuLink}>
+            <Typography variant="h5" color="textSecondary">
+              Category
+            </Typography>
+          </Link>
+        </MenuItem>
+        <MenuItem onClick={handleMobileMenuClose}>
           <Link to="/tags" className={classes.menuLink}>
             <Typography variant="h5" color="textSecondary">
-              Tags
+              Tag
             </Typography>
           </Link>
         </MenuItem>

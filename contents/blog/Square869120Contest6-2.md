@@ -5,6 +5,7 @@ rootPage: /blog
 sidebar: Blog
 showTitle: true
 hideAnchor: true
+category: '競プロ'
 tags: ['AtCoder']
 ---
 

@@ -54,8 +54,13 @@ export default function PCHeader(props) {
           </Link>
         </Typography>
         <Typography variant="h5">
+          <Link to="/categories" className={classes.PCPageLink}>
+            Category
+          </Link>
+        </Typography>
+        <Typography variant="h5">
           <Link to="/tags" className={classes.PCPageLink}>
-            Tags
+            Tag
           </Link>
         </Typography>
         <a
