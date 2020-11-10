@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import PrevNextPost from '../components/PrevNextPost'
 import TagList from '../components/TagList'
 import Layout from '../components/Layout'
 import { connect } from 'react-redux'
@@ -20,9 +21,15 @@ const useStyles = makeStyles({
   blogPostContainer: {
     margin: '0 15%',
   },
+  prevnext: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    flexWrap: 'wrap',
+  },
 })
 
 function Template({
+  pageContext,
   data, // this prop will be injected by the GraphQL query below.
   onSidebarContentSelected,
   selectedKey,
@@ -46,11 +53,12 @@ function Template({
   if (selectedKey !== id) onSidebarContentSelected(id)
   if (sidebarEntry !== frontmatter.sidebar)
     onSetSidebarContentEntry(frontmatter.sidebar)
+  const { prev, next } = pageContext
 
   return (
     <Layout onPostPage={true}>
       <div className={classes.blogPostContainer}>
-        <div className={classes.blogPost}>
+        <div className={classes}>
           <Typography variant="subtitle1" align="center">
             {frontmatter.date}
           </Typography>
@@ -63,11 +71,8 @@ function Template({
           <br />
           <TagList frontmatter={frontmatter} />
           <Typography dangerouslySetInnerHTML={{ __html: html }}></Typography>
-          {/* <div
-            className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          /> */}
         </div>
+        <PrevNextPost prev={prev} next={next} />
       </div>
     </Layout>
   )
@@ -91,6 +96,28 @@ export default connect(mapStateToProps, mapDispatchToProps)(Template)
 
 export const pageQuery = graphql`
   query($path: String!) {
+    allMarkdownRemark {
+      edges {
+        next {
+          frontmatter {
+            showTitle
+            title
+          }
+          fields {
+            slug
+          }
+        }
+        previous {
+          fields {
+            slug
+          }
+          frontmatter {
+            showTitle
+            title
+          }
+        }
+      }
+    }
     markdownRemark(fields: { slug: { eq: $path } }) {
       fields {
         slug

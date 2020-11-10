@@ -5,7 +5,7 @@ const _ = require('lodash')
 module.exports = exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
-  const postTemplate = path.resolve(`src/templates/postTemplate.js`)
+  const postTemplate = path.resolve(`src/templates/posts.js`)
   const tagTemplate = path.resolve(`src/templates/tags.js`)
   const categoryTemplate = path.resolve(`src/templates/categories.js`)
 
@@ -22,7 +22,9 @@ module.exports = exports.createPages = ({ actions, graphql }) => {
             }
             frontmatter {
               category
+              showTitle
               tags
+              title
             }
           }
         }
@@ -43,11 +45,17 @@ module.exports = exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors)
     }
 
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    const pages = result.data.allMarkdownRemark.edges
+    pages.forEach(({ node }, index) => {
+      const prev = index === 0 ? null : pages[index - 1].node
+      const next = index === pages.length - 1 ? null : pages[index + 1].node
       createPage({
         path: replacePath(node.fields.slug),
         component: postTemplate,
-        context: {}, // additional data can be passed via context
+        context: {
+          prev: prev,
+          next: next,
+        },
       })
     })
 
