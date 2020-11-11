@@ -47,7 +47,9 @@
     "styled-components": "^5.2.1",
     "typescript": "^3.6.3"
   },
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
@@ -60,7 +62,7 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public -b master"
   },
   "devDependencies": {
-    "gatsby-plugin-remove-trailing-slashes": "^2.1.6",
+    "gatsby-plugin-remove-trailing-slashes": "^2.3.13",
     "gh-pages": "^2.2.0",
     "mem": "^5.1.1",
     "prettier": "^1.18.2",
