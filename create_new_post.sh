@@ -5,7 +5,7 @@ if [[ $1 = "" ]]; then
   exit 1
 fi
 
-DATE=$(date "+%Y-%m-%d")
+DATE=$(date "+%Y-%m-%dT%H:%M:%S+09:00")
 
 cat << EOF >> contents/blog/$1
 ---
@@ -15,6 +15,7 @@ rootPage: /blog
 sidebar: Blog
 showTitle: true
 hideAnchor: true
+category:
 tags:
 ---
 EOF
