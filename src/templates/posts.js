@@ -58,7 +58,7 @@ function Template({
   return (
     <Layout onPostPage={true}>
       <div className={classes.blogPostContainer}>
-        <div className={classes}>
+        <div>
           <Typography variant="subtitle1" align="center">
             {frontmatter.date}
           </Typography>
@@ -70,7 +70,9 @@ function Template({
           )}
           <br />
           <TagList frontmatter={frontmatter} />
-          <Typography dangerouslySetInnerHTML={{ __html: html }}></Typography>
+          <Typography>
+            <div dangerouslySetInnerHTML={{ __html: html }}></div>
+          </Typography>
         </div>
         <PrevNextPost prev={prev} next={next} />
       </div>
