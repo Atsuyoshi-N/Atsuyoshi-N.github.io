@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "max-ten": {
+      "max": 3
+    },
+    "no-mix-dearu-desumasu": true,
+    "ja-no-mixed-period": {
+      "periodMark": "。",
+      "allowPeriodMarks": ["、"],
+    },
+  },
+}

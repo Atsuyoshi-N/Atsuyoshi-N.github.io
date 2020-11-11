@@ -15,6 +15,7 @@ rootPage: /blog
 sidebar: Blog
 showTitle: true
 hideAnchor: true
+category:
 tags:
 ---
 EOF
