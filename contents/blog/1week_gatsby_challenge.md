@@ -50,6 +50,8 @@ tags: ['React', 'Gatsby', 'Material-UI', 'Recharts', 'ポエム']
 - **Header のレスポンシブ対応**
 - **ブログカテゴリーの実装**
 - RSS フィードの設置
+- **gatsby-node.js を更新しても反映されない**
+- **ページリロードで記事が表示されなくなる**
 
 ## 共有したい点
 
@@ -85,8 +87,41 @@ Material-UI には標準でカードコンポーネントがあり、とても�
 
 もしかしたら gatsby-node.js の実装部分で困るかもしれません。その時は、[該当コミット](https://github.com/Atsuyoshi-N/Atsuyoshi-N.github.io/pull/3/commits/4573372411a3ddd2f3b812e1a33095d9cdcc0640)のように frontmatter に category を追加し、categoriesGroup を定義し、category ごとに categoryTemplate を呼び出すことを行うと良いでしょう。(該当コミットでは、gatsby-node.js が gatsby/creeeatePages.js に置き換わっていることに注意)
 
+### gatsby-node.js を更新しても反映されない。
+
+prev、next の実装を行ってる時に起こりました。具体的には、createPages の context の中身を変更し、gatsby develop を立ち上げ直しても変更した context の中身が変わらないというものでした。
+
+解決策としては、[GitHub の Issue](https://github.com/gatsbyjs/gatsby/issues/10742#issuecomment-458610239)に書いてある通り、pages や templates の名前の変更を行うと一度は直りましたが、また同じ状況が再現します。
+
+そのため、キャッシュを消した後(.cache フォルダを削除)に再度 gatsby develop を試したところ、正常に動きました。
+
+### ページリロードで記事が表示されなくなる。
+
+develop 環境では正常に記事が表示されるのに、gatsby build && gatsby serve をすると、記事が全く表示されない問題が生じました。表示される場合と表示されない場合とがあり混乱しました。
+
+#### 表示される場合
+
+- 一覧ページにあるリンクから記事に飛ぶ場合
+
+#### 表示されない場合
+
+- 直接リンクを叩く場合
+- 記事詳細画面でリロードを行う場合
+- next/prev ボタンで遷移する場合
+
+友人にも相談し trailing-backspace が怪しいんじゃないかとなり、対応してみましたが改善しませんでした。
+
+結局、dangerouslySetInnerHTML が production build で動かないことを発見し、対応しました。対応方法については[Gatsby + microCMS + Firestore エラー・不具合集](https://qiita.com/atomyah/items/b8ae87ad7265e46bc6d2)と[dangerouslySetInnerHTML does not work on production builds #11108](https://github.com/gatsbyjs/gatsby/issues/11108)が参考になりました。
+
 ## まとめ
 
-結構大変でしたが、およそ 10 日間でポートフォリオもブログもある程度形にできたのはとても嬉しいです。作ってみた感想としては、集中すればそれなりのものが作れるということと、公式のリファレンスをはじめとして、誰かのブログなりコードなりが充実してるのが素晴らしいということです。
+結構大変でしたが、およそ 10 日間でポートフォリオもブログもある程度形にできたのはとても嬉しいです。
+
+作ってみた感想としては、
+
+- 集中すればそれなりのものが作れるということ
+- 公式のリファレンスをはじめとして誰かのブログなりコードなりが充実してるのが素晴らしい
+
+ということです。
 
 ポートフォリオの成果物の欄をもっと充実させられるように日々アウトプットを心がけていきたいですね。
