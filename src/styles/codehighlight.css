@@ -7,8 +7,8 @@ pre[class*='language-'] {
   border-radius: 0 4px 4px 4px;
 }
 .gatsby-code-title {
-  padding: 0 10px 20px;
-  font-size: 1.2em;
+  padding: 10px 10px 20px;
+  font-size: 16px;
   line-height: 1.2;
   font-weight: bold;
   display: table;
