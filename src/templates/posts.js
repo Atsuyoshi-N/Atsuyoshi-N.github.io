@@ -19,7 +19,7 @@ import { getSidebarSelectedKey, getSidebarEntry } from '../store/selectors'
 
 const useStyles = makeStyles({
   blogPostContainer: {
-    margin: '0 15%',
+    margin: '0 10%',
   },
   prevnext: {
     display: 'flex',
