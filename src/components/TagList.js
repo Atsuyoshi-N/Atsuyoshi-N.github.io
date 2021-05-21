@@ -11,7 +11,7 @@ const useStyles = makeStyles({
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'flex-start',
-    margin: 0,
+    margin: '10px 0',
   },
   tagItem: {
     color: 'rgba(0, 0, 0, 0.54)',

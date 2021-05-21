@@ -9,7 +9,7 @@ import 'katex/dist/katex.min.css'
 
 const useStyles = makeStyles({
   root: {
-    margin: '0 10% 30px',
+    margin: '0 5% 30px',
   },
   date: {
     marginTop: '10px',
@@ -37,12 +37,11 @@ export default function PostCard({ post }) {
         <CardContent className={classes.cardContent}>
           <span className={classes.date}>{post.frontmatter.date}</span>
           <br />
-          <br />
           <Link to={post.fields.slug}>
             <Typography
-              variant="h4"
+              variant="h5"
               display="inline"
-              color="textSecondary"
+              color="#2b2b2b"
               className={classes.postTitleLink}
             >
               {post.frontmatter.title}
