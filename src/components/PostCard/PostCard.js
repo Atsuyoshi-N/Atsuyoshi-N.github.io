@@ -24,6 +24,11 @@ const useStyles = makeStyles({
       borderBottom: '1px solid cornflowerblue',
     },
   },
+  blogPostContent: {
+    '& p': {
+      fontSize: '16px',
+    },
+  },
   readMore: {
     marginTop: '15px',
   },
@@ -50,12 +55,10 @@ export default function PostCard({ post }) {
           <br />
           <br />
           <TagList frontmatter={post.frontmatter} />
-          <Typography>
-            <div
-              className="blog-post-content"
-              dangerouslySetInnerHTML={{ __html: post.excerpt }}
-            ></div>
-          </Typography>
+          <div
+            className={classes.blogPostContent}
+            dangerouslySetInnerHTML={{ __html: post.excerpt }}
+          ></div>
           <Typography
             align="right"
             variant="subtitle2"
