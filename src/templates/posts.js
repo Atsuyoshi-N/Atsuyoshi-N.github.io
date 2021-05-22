@@ -6,6 +6,7 @@ import Layout from '../components/Layout'
 import { connect } from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
+import styled from 'styled-components'
 import 'katex/dist/katex.min.css'
 import '../styles/blog.css'
 import '../styles/codehighlight.css'
@@ -27,6 +28,36 @@ const useStyles = makeStyles({
     flexWrap: 'wrap',
   },
 })
+
+const MarkdownPost = styled.div`
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  div,
+  ul,
+  ol,
+  table,
+  a,
+  img {
+    margin-bottom: 30.2px;
+  }
+  ,
+  h3 {
+    padding-bottom: 8px;
+  }
+  ,
+  p {
+    font-size: 16px;
+  }
+  ,
+  ul li, ol li, dl dt {
+    margin: 5px 0;
+  },
+`
 
 function Template({
   pageContext,
@@ -70,9 +101,9 @@ function Template({
           )}
           <br />
           <TagList frontmatter={frontmatter} />
-          <Typography>
-            <div dangerouslySetInnerHTML={{ __html: html }}></div>
-          </Typography>
+          <MarkdownPost
+            dangerouslySetInnerHTML={{ __html: html }}
+          ></MarkdownPost>
         </div>
         <PrevNextPost prev={prev} next={next} />
       </div>
