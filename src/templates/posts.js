@@ -52,10 +52,11 @@ const MarkdownPost = styled.div`
   ,
   p {
     font-size: 16px;
+    line-height: 1.9;
   }
   ,
   ul li, ol li, dl dt {
-    margin: 5px 0;
+    margin: .4em 0;
   },
 `
 
