@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import PrevNextPost from '../components/PrevNextPost'
+import MarkdownArticle from '../components/MarkdownArticle'
 import TagList from '../components/TagList'
 import Layout from '../components/Layout'
 import { connect } from 'react-redux'
@@ -102,9 +103,7 @@ function Template({
           )}
           <br />
           <TagList frontmatter={frontmatter} />
-          <MarkdownPost
-            dangerouslySetInnerHTML={{ __html: html }}
-          ></MarkdownPost>
+          <MarkdownArticle html={html} />
         </div>
         <PrevNextPost prev={prev} next={next} />
       </div>

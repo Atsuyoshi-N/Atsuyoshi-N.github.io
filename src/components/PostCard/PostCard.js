@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import MarkdownArticle from '../MarkdownArticle'
 import TagList from '../TagList'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
@@ -54,10 +55,7 @@ export default function PostCard({ post }) {
         </Link>
         <br />
         <TagList frontmatter={post.frontmatter} />
-        <div
-          className={classes.blogPostContent}
-          dangerouslySetInnerHTML={{ __html: post.excerpt }}
-        ></div>
+        <MarkdownArticle html={post.excerpt} />
         <Typography
           align="right"
           variant="subtitle2"
