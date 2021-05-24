@@ -10,7 +10,7 @@ function Header(props) {
 
   return (
     <DevideTheHeader
-      siteTitle={props.siteTitle}
+      siteTitle={siteTitle}
       location={location}
       breakpoints={breakpoints}
     />
