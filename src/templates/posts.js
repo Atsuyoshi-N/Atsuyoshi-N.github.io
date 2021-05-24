@@ -7,7 +7,6 @@ import Layout from '../components/Layout'
 import { connect } from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
-import styled from 'styled-components'
 import 'katex/dist/katex.min.css'
 import '../styles/blog.css'
 import '../styles/codehighlight.css'
@@ -30,40 +29,10 @@ const useStyles = makeStyles({
   },
 })
 
-const MarkdownPost = styled.div`
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  div,
-  ul,
-  ol,
-  table,
-  a,
-  img {
-    margin-bottom: 30.2px;
-  }
-  ,
-  h3 {
-    padding-bottom: 8px;
-  }
-  ,
-  p {
-    font-size: 16px;
-    line-height: 1.9;
-  }
-  ,
-  ul li, ol li, dl dt {
-    margin: .4em 0;
-  },
-`
-
 function Template({
   pageContext,
   data, // this prop will be injected by the GraphQL query below.
+  location,
   onSidebarContentSelected,
   selectedKey,
   onSetSidebarContentEntry,
@@ -89,7 +58,7 @@ function Template({
   const { prev, next } = pageContext
 
   return (
-    <Layout onPostPage={true}>
+    <Layout location={location} onPostPage={true}>
       <div className={classes.blogPostContainer}>
         <div>
           <Typography variant="subtitle1" align="center">

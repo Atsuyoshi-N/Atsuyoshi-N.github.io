@@ -11,7 +11,6 @@ const useStyles = makeStyles({
     width: '100%',
     height: 55,
     marginBottom: 20,
-    backgroundColor: 'cornflowerblue',
     display: 'flex',
   },
 })
@@ -19,7 +18,7 @@ const useStyles = makeStyles({
 function Header(props) {
   const breakpoints = useBreakpoint()
   const classes = useStyles()
-  const { siteTitle } = props
+  const { siteTitle, location } = props
 
   return (
     <div className={classes.root}>

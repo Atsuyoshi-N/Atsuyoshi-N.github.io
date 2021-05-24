@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
     borderBottom: '1px solid #666',
   },
   pageLink: {
-    color: 'white',
+    color: '#2b2b2b',
     textDecoration: 'none',
   },
   menuItemRoot: {

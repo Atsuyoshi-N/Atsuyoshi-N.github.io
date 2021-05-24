@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     alignItems: 'center',
   },
   PCPageLink: {
-    color: 'white',
+    color: '#2b2b2b',
     textDecoration: 'none',
   },
   headerContainerRight: {
@@ -26,7 +26,7 @@ const useStyles = makeStyles({
   },
   icons: {
     marginTop: '5px',
-    color: 'white',
+    color: '#2b2b2b',
   },
 })
 

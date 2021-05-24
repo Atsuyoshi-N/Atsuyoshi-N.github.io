@@ -20,7 +20,13 @@ class Layout extends Component {
   }
 
   render() {
-    const { children, onPostPage, sidebarHide, anchorHide } = this.props
+    const {
+      children,
+      onPostPage,
+      sidebarHide,
+      anchorHide,
+      location,
+    } = this.props
 
     return (
       <StaticQuery
@@ -50,10 +56,7 @@ class Layout extends Component {
                   <AntdLayout>
                     <AntdLayout.Header
                       style={{
-                        position: 'fixed',
-                        top: 0,
                         width: '100%',
-                        zIndex: 100,
                       }}
                     >
                       <Row>
@@ -61,6 +64,7 @@ class Layout extends Component {
                           <Header
                             siteTitle={data.site.siteMetadata.title}
                             sidebarDocked={!matches}
+                            location={location}
                           />
                         </Col>
                         {/* {matches &&

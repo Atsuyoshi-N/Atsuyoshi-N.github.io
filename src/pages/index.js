@@ -18,10 +18,10 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
-const IndexPage = () => {
+const IndexPage = ({ location }) => {
   const classes = useStyles()
   return (
-    <Layout>
+    <Layout location={location}>
       <Typography align="center" variant="h2" className={classes.title}>
         @a244 Portfolio
       </Typography>

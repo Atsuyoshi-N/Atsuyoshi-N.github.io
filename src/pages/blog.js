@@ -8,12 +8,13 @@ const BlogPage = ({
   data: {
     allMarkdownRemark: { edges },
   },
+  location,
 }) => {
   const posts = edges
     .filter(edge => !!edge.node.frontmatter.date)
     .map(edge => <PostCard key={edge.node.id} post={edge.node} />)
   return (
-    <Layout>
+    <Layout location={location}>
       <div>{posts}</div>
     </Layout>
   )

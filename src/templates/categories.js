@@ -7,7 +7,7 @@ import { Typography } from '@material-ui/core'
 // Components
 import { Link, graphql } from 'gatsby'
 
-const Categories = ({ pageContext, data }) => {
+const Categories = ({ pageContext, data, location }) => {
   const { category } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const categoryHeader = `${totalCount} post${
@@ -15,7 +15,7 @@ const Categories = ({ pageContext, data }) => {
   } categorized with "${category}"`
 
   return (
-    <Layout>
+    <Layout location={location}>
       <div>
         <Typography variant="h5" align="center" color="textSecondary">
           {categoryHeader}
