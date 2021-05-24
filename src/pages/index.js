@@ -22,10 +22,6 @@ const IndexPage = ({ location }) => {
   const classes = useStyles()
   return (
     <Layout location={location}>
-      <Typography align="center" variant="h2" className={classes.title}>
-        @a244 Portfolio
-      </Typography>
-      <br />
       <Profile />
       <br />
       <Experience />
