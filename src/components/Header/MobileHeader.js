@@ -10,7 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 const useStyles = makeStyles(theme => ({
   headerContainer: {
     width: '100%',
-    margin: '0 5%',
+    padding: '0 5%',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',

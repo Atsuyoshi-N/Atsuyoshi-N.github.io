@@ -8,7 +8,7 @@ import TwitterIcon from '@material-ui/icons/Twitter'
 const useStyles = makeStyles({
   PCHeaderContainer: {
     width: '100%',
-    margin: '0 10%',
+    padding: '0 10%',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
