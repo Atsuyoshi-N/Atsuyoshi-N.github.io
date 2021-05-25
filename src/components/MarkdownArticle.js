@@ -27,7 +27,7 @@ const StyledMarkdownPost = styled.div`
   ul,
   ol,
   dl {
-    padding-left: 2em;
+    padding-left: 1rem;
   }
   ul li,
   ol li,
