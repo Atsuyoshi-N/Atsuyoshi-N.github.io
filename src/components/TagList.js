@@ -11,7 +11,7 @@ export default function TagList(props) {
       <LocalOfferIcon fontSize="small" color="action" />
       {frontmatter.tags !== null &&
         frontmatter.tags.map(tag => (
-          <Tag>
+          <Tag key={tag}>
             <Link to={`/tags/${kebabCase(tag)}`}>{`#${tag}`}</Link>
           </Tag>
         ))}

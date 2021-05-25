@@ -47,7 +47,7 @@ export default function PostCard({ post }) {
           <Typography
             variant="h4"
             display="inline"
-            color="#2b2b2b"
+            color="initial"
             className={classes.postTitleLink}
           >
             {post.frontmatter.title}

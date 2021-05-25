@@ -4,7 +4,6 @@ import Experience from '../components/Experience'
 import Profile from '../components/Profile'
 import Skill from '../components/Skill'
 import Work from '../components/Work'
-import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import 'antd/lib/button/style/css'
 
