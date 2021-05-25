@@ -8,7 +8,7 @@ import 'katex/dist/katex.min.css'
 
 const useStyles = makeStyles({
   root: {
-    margin: '0 5% 30px',
+    margin: '0 10% 30px',
   },
   posts: {
     marginTop: '50px',

@@ -17,19 +17,24 @@ const StyledMarkdownPost = styled.div`
   img {
     margin-bottom: 30.2px;
   }
-  ,
   h3 {
     padding-bottom: 8px;
   }
-  ,
   p {
     font-size: 16px;
     line-height: 1.9;
   }
-  ,
-  ul li, ol li, dl dt {
-    margin: .4em 0;
-  },
+  ul,
+  ol,
+  dl {
+    padding-left: 2em;
+  }
+  ul li,
+  ol li,
+  dl dt {
+    margin: 0.4em 0;
+    font-size: 16px;
+  }
 `
 
 export default function MarkdownArticle({ html }) {
