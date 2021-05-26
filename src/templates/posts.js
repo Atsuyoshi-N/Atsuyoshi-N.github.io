@@ -5,8 +5,7 @@ import MarkdownArticle from '../components/MarkdownArticle'
 import TagList from '../components/TagList'
 import Layout from '../components/Layout'
 import { connect } from 'react-redux'
-import { makeStyles } from '@material-ui/core/styles'
-import { Typography } from '@material-ui/core'
+import styled from 'styled-components'
 import 'katex/dist/katex.min.css'
 import '../styles/blog.css'
 import '../styles/codehighlight.css'
@@ -17,17 +16,6 @@ import {
   onSetSidebarHide,
 } from '../actions/layout'
 import { getSidebarSelectedKey, getSidebarEntry } from '../store/selectors'
-
-const useStyles = makeStyles({
-  blogPostContainer: {
-    margin: '0 10%',
-  },
-  prevnext: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    flexWrap: 'wrap',
-  },
-})
 
 function Template({
   pageContext,
@@ -43,8 +31,6 @@ function Template({
   const { markdownRemark } = data // data.markdownRemark holds our post data
   const { frontmatter, html, id } = markdownRemark
 
-  const classes = useStyles()
-
   const hideAnchor =
     frontmatter.hideAnchor === null ? false : frontmatter.hideAnchor
   const hideSidebar = frontmatter.sidebar === null ? true : false
@@ -59,26 +45,33 @@ function Template({
 
   return (
     <Layout location={location} onPostPage={true}>
-      <div className={classes.blogPostContainer}>
-        <div>
-          <Typography variant="subtitle1" align="center">
-            {frontmatter.date}
-          </Typography>
-          <br />
-          {frontmatter.showTitle && (
-            <Typography variant="h4" align="center">
-              {frontmatter.title}
-            </Typography>
-          )}
-          <br />
-          <TagList frontmatter={frontmatter} />
-          <MarkdownArticle html={html} />
-        </div>
+      <Wrapper>
+        <Date>{frontmatter.date}</Date>
+        {frontmatter.showTitle && <Title>{frontmatter.title}</Title>}
+        <TagList frontmatter={frontmatter} />
+        <MarkdownArticle html={html} />
         <PrevNextPost prev={prev} next={next} />
-      </div>
+      </Wrapper>
     </Layout>
   )
 }
+
+const Wrapper = styled.div`
+  margin: 0 10%;
+`
+
+const Date = styled.p`
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 0.5em;
+`
+
+const Title = styled.h1`
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 1em;
+`
 
 const mapStateToProps = state => {
   return {
