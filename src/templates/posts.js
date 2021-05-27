@@ -1,5 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { Link } from 'gatsby'
+import kebabCase from 'lodash/kebabCase'
 import PrevNextPost from '../components/PrevNextPost'
 import MarkdownArticle from '../components/MarkdownArticle'
 import TagList from '../components/TagList'
@@ -46,9 +48,19 @@ function Template({
   return (
     <Layout location={location} onPostPage={true}>
       <Wrapper>
-        <Date>{frontmatter.date}</Date>
         {frontmatter.showTitle && <Title>{frontmatter.title}</Title>}
-        <TagList frontmatter={frontmatter} />
+        <Meta>
+          <TagList frontmatter={frontmatter} />
+          {frontmatter.category && (
+            <Category>
+              Category:
+              <Link to={`/categories/${kebabCase(frontmatter.category)}`}>
+                {frontmatter.category}
+              </Link>
+            </Category>
+          )}
+          <Date>{`Date: ${frontmatter.date}`}</Date>
+        </Meta>
         <MarkdownArticle html={html} />
         <PrevNextPost prev={prev} next={next} />
       </Wrapper>
@@ -60,17 +72,38 @@ const Wrapper = styled.div`
   margin: 0 10%;
 `
 
-const Date = styled.p`
-  color: rgba(0, 0, 0, 0.85);
-  font-size: 16px;
-  text-align: center;
-  margin-bottom: 0.5em;
-`
-
 const Title = styled.h1`
   font-size: 1.8rem;
+  margin-bottom: 5px;
+`
+
+const Meta = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 30.2px;
+`
+
+const Category = styled.p`
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 90%;
+  line-height: 1.8;
+  margin: 10px 0 10px 15px;
+  a {
+    font-size: 100%;
+    line-height: 1.8;
+    color: #1890ff;
+    border-bottom: 1px solid #1890ff;
+    margin-left: 3px;
+    margin-bottom: 1em;
+  }
+`
+
+const Date = styled.p`
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 90%;
+  line-height: 1.8;
   text-align: center;
-  margin-bottom: 1em;
+  margin: 10px 0 10px 15px;
 `
 
 const mapStateToProps = state => {
@@ -126,6 +159,7 @@ export const pageQuery = graphql`
         showTitle
         hideAnchor
         tags
+        category
       }
     }
   }
