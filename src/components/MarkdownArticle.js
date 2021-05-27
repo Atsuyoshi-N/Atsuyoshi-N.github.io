@@ -15,14 +15,22 @@ const StyledMarkdownPost = styled.div`
   table,
   a,
   img {
-    margin-bottom: 30.2px;
+    margin-bottom: 24.2px;
+  }
+  h1,
+  h2,
+  h3 {
+    padding-top: 40px;
+  }
+  h2 {
+    font-size: 27.9px;
   }
   h3 {
     padding-bottom: 8px;
   }
   p {
     font-size: 16px;
-    line-height: 1.9;
+    line-height: 2.2;
   }
   ul,
   ol,
