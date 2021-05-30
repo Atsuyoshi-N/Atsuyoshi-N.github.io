@@ -30,7 +30,7 @@ const initialState = {
   menu: { open: false },
 }
 
-export default function(state = initialState, action) {
+const layout = (state = initialState, action) => {
   switch (action.type) {
     // anchor
     case SET_ANCHOR_OPEN: {
@@ -134,3 +134,5 @@ export default function(state = initialState, action) {
       return state
   }
 }
+
+export default layout
