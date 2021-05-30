@@ -3,7 +3,6 @@ import { Link } from 'gatsby'
 import MarkdownArticle from '../MarkdownArticle'
 import TagList from '../TagList'
 import styled from 'styled-components'
-import 'katex/dist/katex.min.css'
 
 export default function PostCard({ post }) {
   return (
