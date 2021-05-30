@@ -2,7 +2,6 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import PostCard from '../components/PostCard'
-import 'katex/dist/katex.min.css'
 
 const BlogPage = ({
   data: {
@@ -11,8 +10,8 @@ const BlogPage = ({
   location,
 }) => {
   const posts = edges
-    .filter(edge => !!edge.node.frontmatter.date)
-    .map(edge => <PostCard key={edge.node.id} post={edge.node} />)
+    .filter((edge) => !!edge.node.frontmatter.date)
+    .map((edge) => <PostCard key={edge.node.id} post={edge.node} />)
   return (
     <Layout location={location}>
       <div>{posts}</div>
@@ -23,7 +22,7 @@ const BlogPage = ({
 export default BlogPage
 
 export const pageQuery = graphql`
-  query($path: String!) {
+  query ($path: String!) {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { frontmatter: { rootPage: { eq: $path } } }

@@ -8,7 +8,6 @@ import TagList from '../components/TagList'
 import Layout from '../components/Layout'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
-import 'katex/dist/katex.min.css'
 import '../styles/blog.css'
 import '../styles/codehighlight.css'
 import {
@@ -106,7 +105,7 @@ const Date = styled.p`
   margin: 10px 0 10px 15px;
 `
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     selectedKey: getSidebarSelectedKey(state),
     sidebarEntry: getSidebarEntry(state),
@@ -123,7 +122,7 @@ const mapDispatchToProps = {
 export default connect(mapStateToProps, mapDispatchToProps)(Template)
 
 export const pageQuery = graphql`
-  query($path: String!) {
+  query ($path: String!) {
     allMarkdownRemark {
       edges {
         next {
