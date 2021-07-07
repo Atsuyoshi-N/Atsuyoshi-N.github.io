@@ -7,7 +7,7 @@ import { Typography } from '@material-ui/core'
 // Components
 import { Link, graphql } from 'gatsby'
 
-const Tags = ({ pageContext, data }) => {
+const Tags = ({ pageContext, data, location }) => {
   const { tag } = pageContext
   const { edges, totalCount } = data.allMarkdownRemark
   const tagHeader = `${totalCount} post${
@@ -15,7 +15,7 @@ const Tags = ({ pageContext, data }) => {
   } tagged with "${tag}"`
 
   return (
-    <Layout>
+    <Layout location={location}>
       <div>
         <Typography variant="h5" align="center" color="textSecondary">
           {tagHeader}
@@ -86,7 +86,7 @@ export const pageQuery = graphql`
           fields {
             slug
           }
-          excerpt(format: HTML, pruneLength: 100, truncate: true)
+          excerpt(format: HTML, pruneLength: 150, truncate: true)
           frontmatter {
             title
             date(formatString: "YYYY-MM-DD")

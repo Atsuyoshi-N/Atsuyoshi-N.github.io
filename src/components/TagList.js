@@ -1,41 +1,50 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import kebabCase from 'lodash/kebabCase'
-import { makeStyles } from '@material-ui/core/styles'
-import { Typography } from '@material-ui/core'
-import LocalOfferIcon from '@material-ui/icons/LocalOffer'
-
-const useStyles = makeStyles({
-  tagsList: {
-    listStyle: 'none',
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'flex-start',
-    margin: 0,
-  },
-  tagItem: {
-    color: 'rgba(0, 0, 0, 0.54)',
-    margin: '0 5px 0',
-  },
-})
+import styled from 'styled-components'
 
 export default function TagList(props) {
-  const classes = useStyles()
   const { frontmatter } = props
   return (
-    <ul className={classes.tagsList}>
-      <LocalOfferIcon fontSize="small" />
+    <TagLists>
+      <ListTitle>Tags:</ListTitle>
       {frontmatter.tags !== null &&
         frontmatter.tags.map(tag => (
-          <li>
-            <Typography variant="subtitle2" color="textSecondary">
-              <Link
-                to={`/tags/${kebabCase(tag)}`}
-                className={classes.tagItem}
-              >{`#${tag}`}</Link>
-            </Typography>
-          </li>
+          <Tag key={tag}>
+            <Link to={`/tags/${kebabCase(tag)}`}>{`#${tag}`}</Link>
+          </Tag>
         ))}
-    </ul>
+    </TagLists>
   )
 }
+
+const TagLists = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 10px 0;
+`
+
+const ListTitle = styled.p`
+  font-size: 90%;
+  line-height: 1.8;
+`
+
+const Tag = styled.li`
+  a {
+    font-size: 90%;
+    color: #1890ff;
+    border-bottom: 1px solid #1890ff;
+    font-weight: 500;
+    letter-spacing: 0.00714em;
+    line-height: 1.8;
+    margin-left: 3px;
+  }
+  &::after {
+    content: ', ';
+  }
+  &:last-child::after {
+    content: '';
+  }
+`

@@ -10,7 +10,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 const useStyles = makeStyles(theme => ({
   headerContainer: {
     width: '100%',
-    margin: '0 5%',
+    padding: '0 5%',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
     borderBottom: '1px solid #666',
   },
   pageLink: {
-    color: 'white',
+    color: '#2b2b2b',
     textDecoration: 'none',
   },
   menuItemRoot: {
@@ -77,30 +77,23 @@ export default function MobileHeader(props) {
           </div>
         </MenuItem>
         <MenuItem onClick={handleMobileMenuClose}>
-          <Link to="/" className={classes.menuLink}>
-            <Typography variant="h5" color="textSecondary">
-              Portfolio
-            </Typography>
-          </Link>
-        </MenuItem>
-        <MenuItem onClick={handleMobileMenuClose}>
-          <Link to="/blog" className={classes.menuLink}>
-            <Typography variant="h5" color="textSecondary">
-              Blog
-            </Typography>
-          </Link>
-        </MenuItem>
-        <MenuItem onClick={handleMobileMenuClose}>
           <Link to="/categories" className={classes.menuLink}>
             <Typography variant="h5" color="textSecondary">
-              Category
+              Categories
             </Typography>
           </Link>
         </MenuItem>
         <MenuItem onClick={handleMobileMenuClose}>
           <Link to="/tags" className={classes.menuLink}>
             <Typography variant="h5" color="textSecondary">
-              Tag
+              Tags
+            </Typography>
+          </Link>
+        </MenuItem>
+        <MenuItem onClick={handleMobileMenuClose}>
+          <Link to="/" className={classes.menuLink}>
+            <Typography variant="h5" color="textSecondary">
+              Portfolio
             </Typography>
           </Link>
         </MenuItem>

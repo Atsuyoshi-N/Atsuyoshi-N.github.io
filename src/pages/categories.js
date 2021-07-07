@@ -17,8 +17,9 @@ const CategoryPage = ({
       siteMetadata: { title },
     },
   },
+  location,
 }) => (
-  <Layout>
+  <Layout location={location}>
     <div>
       <Helmet title={title} />
       <div style={{ margin: '0 10%' }}>

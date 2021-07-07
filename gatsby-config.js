@@ -3,6 +3,7 @@ module.exports = {
     title: 'a244_note',
     siteUrl: `https://atsuyoshi-n.github.io`,
   },
+  flags: { PRESERVE_WEBPACK_CACHE: true },
   plugins: [
     {
       resolve: 'gatsby-plugin-material-ui',
@@ -44,7 +45,6 @@ module.exports = {
         path: `${__dirname}/src/sidebars`,
       },
     },
-    'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
       resolve: `gatsby-plugin-manifest`,
@@ -58,12 +58,18 @@ module.exports = {
         icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
       },
     },
+    'gatsby-transformer-sharp',
     {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
           `gatsby-remark-responsive-iframe`,
-          `gatsby-remark-katex`,
+          {
+            resolve: 'gatsby-remark-katex',
+            options: {
+              strict: 'ignore',
+            },
+          },
           {
             resolve: `gatsby-remark-autolink-headers`,
             options: {
@@ -116,7 +122,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
+              return allMarkdownRemark.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.excerpt,
                   date: edge.node.frontmatter.date,
@@ -153,7 +159,6 @@ module.exports = {
     },
     `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-breakpoints`,
-    `gatsby-plugin-remove-trailing-slashes`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

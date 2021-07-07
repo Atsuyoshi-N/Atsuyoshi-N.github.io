@@ -1,12 +1,13 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { Link } from 'gatsby'
+import kebabCase from 'lodash/kebabCase'
 import PrevNextPost from '../components/PrevNextPost'
+import MarkdownArticle from '../components/MarkdownArticle'
 import TagList from '../components/TagList'
 import Layout from '../components/Layout'
 import { connect } from 'react-redux'
-import { makeStyles } from '@material-ui/core/styles'
-import { Typography } from '@material-ui/core'
-import 'katex/dist/katex.min.css'
+import styled from 'styled-components'
 import '../styles/blog.css'
 import '../styles/codehighlight.css'
 import {
@@ -17,20 +18,10 @@ import {
 } from '../actions/layout'
 import { getSidebarSelectedKey, getSidebarEntry } from '../store/selectors'
 
-const useStyles = makeStyles({
-  blogPostContainer: {
-    margin: '0 15%',
-  },
-  prevnext: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    flexWrap: 'wrap',
-  },
-})
-
 function Template({
   pageContext,
   data, // this prop will be injected by the GraphQL query below.
+  location,
   onSidebarContentSelected,
   selectedKey,
   onSetSidebarContentEntry,
@@ -40,8 +31,6 @@ function Template({
 }) {
   const { markdownRemark } = data // data.markdownRemark holds our post data
   const { frontmatter, html, id } = markdownRemark
-
-  const classes = useStyles()
 
   const hideAnchor =
     frontmatter.hideAnchor === null ? false : frontmatter.hideAnchor
@@ -56,31 +45,67 @@ function Template({
   const { prev, next } = pageContext
 
   return (
-    <Layout onPostPage={true}>
-      <div className={classes.blogPostContainer}>
-        <div>
-          <Typography variant="subtitle1" align="center">
-            {frontmatter.date}
-          </Typography>
-          <br />
-          {frontmatter.showTitle && (
-            <Typography variant="h4" align="center">
-              {frontmatter.title}
-            </Typography>
-          )}
-          <br />
+    <Layout location={location} onPostPage={true}>
+      <Wrapper>
+        {frontmatter.showTitle && <Title>{frontmatter.title}</Title>}
+        <Meta>
           <TagList frontmatter={frontmatter} />
-          <Typography>
-            <div dangerouslySetInnerHTML={{ __html: html }}></div>
-          </Typography>
-        </div>
+          {frontmatter.category && (
+            <Category>
+              Category:
+              <Link to={`/categories/${kebabCase(frontmatter.category)}`}>
+                {frontmatter.category}
+              </Link>
+            </Category>
+          )}
+          <Date>{`Date: ${frontmatter.date}`}</Date>
+        </Meta>
+        <MarkdownArticle html={html} />
         <PrevNextPost prev={prev} next={next} />
-      </div>
+      </Wrapper>
     </Layout>
   )
 }
 
-const mapStateToProps = state => {
+const Wrapper = styled.div`
+  margin: 0 10%;
+`
+
+const Title = styled.h1`
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+`
+
+const Meta = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 30.2px;
+`
+
+const Category = styled.p`
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 90%;
+  line-height: 1.8;
+  margin: 10px 0 10px 15px;
+  a {
+    font-size: 100%;
+    line-height: 1.8;
+    color: #1890ff;
+    border-bottom: 1px solid #1890ff;
+    margin-left: 3px;
+    margin-bottom: 1em;
+  }
+`
+
+const Date = styled.p`
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 90%;
+  line-height: 1.8;
+  text-align: center;
+  margin: 10px 0 10px 15px;
+`
+
+const mapStateToProps = (state) => {
   return {
     selectedKey: getSidebarSelectedKey(state),
     sidebarEntry: getSidebarEntry(state),
@@ -97,7 +122,7 @@ const mapDispatchToProps = {
 export default connect(mapStateToProps, mapDispatchToProps)(Template)
 
 export const pageQuery = graphql`
-  query($path: String!) {
+  query ($path: String!) {
     allMarkdownRemark {
       edges {
         next {
@@ -133,6 +158,7 @@ export const pageQuery = graphql`
         showTitle
         hideAnchor
         tags
+        category
       }
     }
   }

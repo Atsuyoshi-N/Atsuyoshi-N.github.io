@@ -1,34 +1,19 @@
 import React from 'react'
-import PCHeader from './PCHeader'
-import MobileHeader from './MobileHeader'
+import DevideTheHeader from './DevideTheHeader'
 import { getMenuState } from '../../store/selectors'
 import { connect } from 'react-redux'
 import { useBreakpoint } from 'gatsby-plugin-breakpoints'
-import { makeStyles } from '@material-ui/core/styles'
-
-const useStyles = makeStyles({
-  root: {
-    width: '100%',
-    height: 55,
-    marginBottom: 20,
-    backgroundColor: 'cornflowerblue',
-    display: 'flex',
-  },
-})
 
 function Header(props) {
   const breakpoints = useBreakpoint()
-  const classes = useStyles()
-  const { siteTitle } = props
+  const { siteTitle, location } = props
 
   return (
-    <div className={classes.root}>
-      {breakpoints.sm ? (
-        <MobileHeader siteTitle={siteTitle} />
-      ) : (
-        <PCHeader siteTitle={siteTitle} />
-      )}
-    </div>
+    <DevideTheHeader
+      siteTitle={siteTitle}
+      location={location}
+      breakpoints={breakpoints}
+    />
   )
 }
 

@@ -9,7 +9,7 @@ import {
 
 export default function PrevNextPost({ prev, next }) {
   return (
-    <Box mt={5} display="flex" justifyContent="space-between">
+    <Box mt={5} display="flex" justifyContent={prevNextButtonPos(prev, next)}>
       {prev === null ? null : PrevNextLink(prev, 'prev')}
       {next === null ? null : PrevNextLink(next, 'next')}
     </Box>
@@ -36,4 +36,11 @@ const PrevNextLink = ({ fields, frontmatter }, direction) => {
       </Card>
     </Box>
   )
+}
+
+const prevNextButtonPos = (prev, next) => {
+  if (prev !== null && next !== null) return 'space-between'
+  else if (prev === null && next === null) return 'space-between'
+  else if (prev !== null) return 'flex-start'
+  else return 'flex-end'
 }

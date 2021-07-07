@@ -32,7 +32,6 @@ export default function SkillSetCard(props) {
           <Typography
             display="block"
             align="center"
-            component="subtitle2"
             className={classes.history}
           >
             {skillSet.history}
