@@ -4,7 +4,6 @@ import Experience from '../components/Experience'
 import Profile from '../components/Profile'
 import Skill from '../components/Skill'
 import Work from '../components/Work'
-import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import 'antd/lib/button/style/css'
 
@@ -18,14 +17,10 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
-const IndexPage = () => {
+const IndexPage = ({ location }) => {
   const classes = useStyles()
   return (
-    <Layout>
-      <Typography align="center" variant="h2" className={classes.title}>
-        @a244 Portfolio
-      </Typography>
-      <br />
+    <Layout location={location}>
       <Profile />
       <br />
       <Experience />

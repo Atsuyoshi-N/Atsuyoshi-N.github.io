@@ -24,19 +24,14 @@ const rows = [
   createData('所属', '横浜国立大学理工学部数物電子情報系学科', ''),
   createData('GitHub', 'Atsuyoshi-N', 'https://github.com/Atsuyoshi-N'),
   createData('Twitter', '@a244_n', 'https://twitter.com/a244_n'),
-  createData('ブログ', 'a244_note/blog', '/blog'),
-  createData(
-    'はてなブログ',
-    "acchan's blog",
-    'https://acchann.hatenablog.com/'
-  ),
+  createData('ブログ', 'a244_note', '/blog'),
 ]
 
 export default function SelfIntroduction() {
   const classes = useStyles()
   return (
     <>
-      <ContentTitle title="Profile" />
+      <ContentTitle title="About Me" />
       <Table className={classes.table} aria-label="simple table">
         <TableBody>
           {rows.map(row => (
