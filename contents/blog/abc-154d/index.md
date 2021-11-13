@@ -1,6 +1,7 @@
 ---
 date: 2020-02-10
 title: ABC154D-Dice in Line
+description: ABC154D-Dice in Line の累積和を用いた解法について
 rootPage: /blog
 sidebar: Blog
 showTitle: true

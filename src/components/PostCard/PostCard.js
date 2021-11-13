@@ -12,10 +12,13 @@ export default function PostCard({ post }) {
         <Title>{post.frontmatter.title}</Title>
       </Link>
       <TagList frontmatter={post.frontmatter} />
-      <MarkdownArticle html={post.excerpt} />
+      <p>
+        <i>{post.frontmatter.description}</i>
+      </p>
       <ReadMore>
         <Link to={`${post.fields.slug}`}>続きを読む</Link>
       </ReadMore>
+      <HorizontalLine />
     </Wrapper>
   )
 }
@@ -34,16 +37,23 @@ const Title = styled.h1`
 `
 
 const ReadMore = styled.button`
-  background-color: #4d4d4d;
+  background-color: #dde0e4;
   width: 120px;
   margin: 0 0 0 auto;
+  border: 1px solid #dde0e4;
   border-radius: 0.425rem;
   display: flex;
   justify-content: center;
   a {
     display: block;
     width: 100%;
-    color: #fff;
+    color: rgba(0, 0, 0, 0.85);
     padding: 0.5rem 0.5rem;
   }
+`
+
+const HorizontalLine = styled.hr`
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #dde0e4;
 `

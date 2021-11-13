@@ -1,6 +1,7 @@
 ---
 date: 2020-02-23
 title: Square869120 B-AtCoder Markets
+description: Square869120 B AtCoder Markets の解法について
 rootPage: /blog
 sidebar: Blog
 showTitle: true

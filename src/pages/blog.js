@@ -38,6 +38,7 @@ export const pageQuery = graphql`
             date(formatString: "YYYY-MM-DD")
             rootPage
             title
+            description
             tags
           }
           html

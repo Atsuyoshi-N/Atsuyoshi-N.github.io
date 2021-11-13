@@ -1,6 +1,7 @@
 ---
 date: 2020-11-11T13:01:31+09:00
 title: 約10日でポートフォリオとブログを改善した話
+description: Gatsbyでブログを改善する際にハマったことなど
 rootPage: /blog
 sidebar: Blog
 showTitle: true

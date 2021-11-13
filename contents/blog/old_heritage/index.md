@@ -1,6 +1,7 @@
 ---
 date: 2020-02-22
 title: JOI2006/2007 最古の遺跡
+description: JOI2006/2007 最古の遺跡 の二分探索を用いた解法について
 rootPage: /blog
 sidebar: Blog
 showTitle: true
