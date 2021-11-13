@@ -16,7 +16,7 @@ export default function PostCard({ post }) {
         <i>{post.frontmatter.description}</i>
       </p>
       <ReadMore>
-        <Link to={`${post.fields.slug}`}>続きを読む</Link>
+        <Link to={`${post.fields.slug}`}>記事を読む</Link>
       </ReadMore>
       <HorizontalLine />
     </Wrapper>
