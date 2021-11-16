@@ -2,6 +2,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import Experience from '../components/Experience'
 import Profile from '../components/Profile'
+import Seo from '../components/Seo'
 import Skill from '../components/Skill'
 import Work from '../components/Work'
 import { makeStyles } from '@material-ui/core/styles'
@@ -21,6 +22,7 @@ const IndexPage = ({ location }) => {
   const classes = useStyles()
   return (
     <Layout location={location}>
+      <Seo title="Portfolio" description="a244nのポートフォリオ" />
       <Profile />
       <br />
       <Experience />
