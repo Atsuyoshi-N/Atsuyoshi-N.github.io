@@ -157,6 +157,15 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ['G-X0RNXE5821'],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
     `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-breakpoints`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
