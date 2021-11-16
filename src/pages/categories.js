@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../components/Layout'
+import Seo from '../components/Seo'
 import { Typography } from '@material-ui/core'
 
 // Utilities
@@ -20,13 +21,13 @@ const CategoryPage = ({
   location,
 }) => (
   <Layout location={location}>
+    <Seo title="カテゴリー一覧" description="ブログ記事のカテゴリー一覧" />
     <div>
-      <Helmet title={title} />
       <div style={{ margin: '0 10%' }}>
         <Typography variant="h5">Categories</Typography>
         <br />
         <ul>
-          {group.map(category => (
+          {group.map((category) => (
             <li key={category.fieldValue}>
               <Link to={`/categories/${kebabCase(category.fieldValue)}/`}>
                 <Typography>

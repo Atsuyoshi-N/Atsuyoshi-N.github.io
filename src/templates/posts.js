@@ -6,6 +6,7 @@ import PrevNextPost from '../components/PrevNextPost'
 import MarkdownArticle from '../components/MarkdownArticle'
 import TagList from '../components/TagList'
 import Layout from '../components/Layout'
+import Seo from '../components/Seo'
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 import '../styles/blog.css'
@@ -30,7 +31,7 @@ function Template({
   onSetSidebarHide,
 }) {
   const { markdownRemark } = data // data.markdownRemark holds our post data
-  const { frontmatter, html, id } = markdownRemark
+  const { excerpt, frontmatter, html, id } = markdownRemark
 
   const hideAnchor =
     frontmatter.hideAnchor === null ? false : frontmatter.hideAnchor
@@ -46,6 +47,7 @@ function Template({
 
   return (
     <Layout location={location} onPostPage={true}>
+      <Seo title={frontmatter.title} description={excerpt} />
       <Wrapper>
         {frontmatter.showTitle && <Title>{frontmatter.title}</Title>}
         <Meta>
@@ -151,6 +153,7 @@ export const pageQuery = graphql`
       }
       id
       html
+      excerpt
       frontmatter {
         date(formatString: "YYYY-MM-DD")
         title
