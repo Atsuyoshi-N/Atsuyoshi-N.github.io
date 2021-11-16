@@ -2,4 +2,4 @@
     "componentChunkName": "component---src-pages-categories-js",
     "path": "/categories",
     "result": {"data":{"site":{"siteMetadata":{"title":"a244_note"}},"allMarkdownRemark":{"group":[{"fieldValue":"Web開発","totalCount":1},{"fieldValue":"競プロ","totalCount":3}]}},"pageContext":{}},
-    "staticQueryHashes": ["3649515864"]}
+    "staticQueryHashes": ["3000541721","3649515864"]}
