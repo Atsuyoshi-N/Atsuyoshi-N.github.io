@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "next build && gh-pages -d out -b master"
+    "deploy": "next build && gh-pages -d out -b master --dotfiles"
   },
   "dependencies": {
     "next": "^14.2.29",
