@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import { FcKindle } from 'react-icons/fc'
 import { SiAnki } from 'react-icons/si'
+import { GiWineGlass } from 'react-icons/gi'
 
 const PROJECTS = [
   {
@@ -26,6 +27,17 @@ const PROJECTS = [
     icon: <SiAnki size={40} className="text-[#0a6ebd]" />,
     accent: 'from-violet-400 to-purple-500',
     glow: 'rgba(167,139,250,0.15)',
+  },
+  {
+    name: 'wine-mock-exam-stats',
+    tagline: 'ワインエキスパート模擬試験ダッシュボード',
+    description:
+      'ワインエキスパートの模擬試験の得点・正解率・偏差値・判定・分野別成績を一目で確認できるダッシュボードです',
+    url: 'https://atsuyoshi-n.github.io/wine_mock_exam_stats/',
+    tags: ['GitHub Pages'],
+    icon: <GiWineGlass size={40} className="text-rose-400" />,
+    accent: 'from-rose-400 to-red-500',
+    glow: 'rgba(251,113,133,0.15)',
   },
 ]
 
