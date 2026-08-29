@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 import { FcKindle } from 'react-icons/fc'
 import { SiAnki } from 'react-icons/si'
-import { GiWineGlass } from 'react-icons/gi'
+import { GiMartini } from 'react-icons/gi'
 
 const PROJECTS = [
   {
@@ -29,13 +29,13 @@ const PROJECTS = [
     glow: 'rgba(167,139,250,0.15)',
   },
   {
-    name: 'wine-mock-exam-stats',
-    tagline: 'ワインエキスパート模擬試験ダッシュボード',
+    name: 'cocktail-flashcard',
+    tagline: 'カクテルレシピの暗記カード',
     description:
-      'ワインエキスパートの模擬試験の得点・正解率・偏差値・判定・分野別成績を一目で確認できるダッシュボードです',
-    url: 'https://atsuyoshi-n.github.io/wine_mock_exam_stats/',
+      'カクテルのレシピを暗記カード形式で学習できるページです。材料や技法をクイズ感覚で繰り返し確認できます',
+    url: 'https://atsuyoshi-n.github.io/cocktail_flashcard/',
     tags: ['GitHub Pages'],
-    icon: <GiWineGlass size={40} className="text-rose-400" />,
+    icon: <GiMartini size={40} className="text-rose-400" />,
     accent: 'from-rose-400 to-red-500',
     glow: 'rgba(251,113,133,0.15)',
   },
